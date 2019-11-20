@@ -49,6 +49,7 @@
           </mapping>
           <excludes>
             <exclude>*</exclude>
+            <exclude>coverage/**</exclude>
             <exclude>node/**</exclude>
             <exclude>node_modules/**</exclude>
             <exclude>**/*.scss</exclude>
@@ -72,6 +73,9 @@
             </fileset>
             <fileset>
               <directory>node_modules</directory>
+            </fileset>
+            <fileset>
+              <directory>coverage</directory>
             </fileset>
           </filesets>
         </configuration>
@@ -97,6 +101,16 @@
               <goal>npm</goal>
             </goals>
             <phase>generate-resources</phase>
+          </execution>
+          <execution>
+            <id>test with npm</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <phase>process-resources</phase>
+            <configuration>
+              <arguments>run test:ci</arguments>
+            </configuration>
           </execution>
           <execution>
             <id>build with npm</id>
