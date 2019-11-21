@@ -103,6 +103,16 @@
             <phase>generate-resources</phase>
           </execution>
           <execution>
+            <id>lint with npm</id>
+            <goals>
+              <goal>npm</goal>
+            </goals>
+            <phase>process-resources</phase>
+            <configuration>
+              <arguments>run lint</arguments>
+            </configuration>
+          </execution>
+          <execution>
             <id>test with npm</id>
             <goals>
               <goal>npm</goal>
