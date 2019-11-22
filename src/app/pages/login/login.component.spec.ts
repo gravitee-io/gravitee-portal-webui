@@ -23,11 +23,11 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {CatalogComponent} from '../catalog/catalog.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {AppComponent} from "../../app.component";
-import {provideMagicalMock} from "../../test/mock.helper.spec";
-import {Title} from "@angular/platform-browser";
-import {UserService} from "@gravitee/ng-portal-webclient";
-import {CurrentUserService} from "../../services/current-user.service";
+import {AppComponent} from '../../app.component';
+import {provideMagicalMock} from '../../test/mock.helper.spec';
+import {Title} from '@angular/platform-browser';
+import {UserService} from '@gravitee/ng-portal-webclient';
+import {CurrentUserService} from '../../services/current-user.service';
 
 describe('LoginComponent', () => {
   let component: LoginComponent;

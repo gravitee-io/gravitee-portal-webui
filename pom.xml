@@ -51,6 +51,8 @@
             <exclude>*</exclude>
             <exclude>node/**</exclude>
             <exclude>node_modules/**</exclude>
+            <exclude>lib/**</exclude>
+            <exclude>coverage/**</exclude>
             <exclude>**/*.scss</exclude>
             <exclude>**/*.woff2</exclude>
           </excludes>
