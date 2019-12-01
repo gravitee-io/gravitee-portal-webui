@@ -65,12 +65,12 @@ export class RouteService {
         if (type === RouteType.catalog) {
           if (categoryApiQuery) {
             help = this.apiService
-              .getApis({ cat: categoryApiQuery })
+              .getApis({ cat: categoryApiQuery, size: 0 })
               .toPromise()
               .then(({ metadata: { data: { total } } }) => total);
           } else {
             help = this.portalService
-              .getViews({})
+              .getViews({ size: 0 })
               .toPromise()
               .then(({ metadata: { data: { total } } }) => total);
           }
