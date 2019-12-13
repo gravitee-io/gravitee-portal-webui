@@ -58,6 +58,7 @@ import { GvSearchComponent } from './components/gv-search/gv-search.component';
 import { GvMenuRightSlotDirective } from './directives/gv-menu-right-slot.directive';
 import { GvMenuTopSlotDirective } from './directives/gv-menu-top-slot.directive';
 import { GvMenuHeaderComponent } from './components/gv-menu-header/gv-menu-header.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { GvMenuHeaderComponent } from './components/gv-menu-header/gv-menu-heade
         provide: TranslateCompiler,
         useClass: TranslateMessageFormatCompiler
       }
-    })
+    }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     {

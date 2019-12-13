@@ -1,5 +1,5 @@
 {
-  "baseUrl": "/portal/DEFAULT",
+  "baseUrl": "https://v3.nightly.gravitee.io/portal/DEFAULT",
   "pagination": {
     "size": {
       "default": 10,
