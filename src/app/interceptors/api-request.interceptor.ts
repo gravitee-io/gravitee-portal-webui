@@ -41,7 +41,6 @@ export class ApiRequestInterceptor implements HttpInterceptor {
       },
       withCredentials: true
     });
-
     return next.handle(request).pipe(tap(
       () => {},
       (err: any) => {
@@ -52,7 +51,7 @@ export class ApiRequestInterceptor implements HttpInterceptor {
             this.currentUserService.revokeUser();
           }
         }
-        if (err.error && err.error.errors) {
+        if (err.error && err.error.errors && !request.reportProgress) {
           const error = err.error.errors[0];
           this.notificationService.error(error.code, error.parameters, error.message);
         }
