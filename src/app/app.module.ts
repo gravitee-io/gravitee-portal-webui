@@ -75,6 +75,7 @@ import { ViewportScroller } from '@angular/common';
 import { filter } from 'rxjs/operators';
 import { ApplicationAnalyticsComponent } from './pages/application/application-analytics/application-analytics.component';
 import { ApplicationGeneralComponent } from './pages/application/application-general/application-general.component';
+import { BrowserNotSupportedComponent } from './pages/browser-not-supported/browser-not-supported.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { GvMenuRightSlotDirective } from './directives/gv-menu-right-slot.directive';
 import { ApplicationCreationComponent } from './pages/application/application-creation/application-creation.component';
@@ -134,6 +135,7 @@ import { GvSelectDashboardComponent } from './components/gv-select-dashboard/gv-
     SinglePageComponent,
     SubscriptionsComponent,
     GvFileUploadComponent,
+    BrowserNotSupportedComponent,
     NotFoundComponent,
     ApplicationCreationComponent,
     GvButtonCreateApplicationComponent,
@@ -202,11 +204,37 @@ export class AppModule {
   }
 }
 
-export function initApp(configurationService: ConfigurationService, authService: AuthService, currentUserService: CurrentUserService,
-                        translationService: TranslationService) {
-  return () => configurationService.load().then(() => {
-      return authService.load().then(() => currentUserService.load().then(() => translationService.load()));
-    }
-  );
+function initApp(configurationService: ConfigurationService, authService: AuthService, currentUserService: CurrentUserService,
+                 translationService: TranslationService, router: Router) {
+  // browser compatibility
+  const isIE = detectIE();
+  if (isIE !== false && isIE < 12) {
+    router.navigate(['browser-not-supported']);
+  }
 
+  return () => configurationService.load().then(() => {
+    return authService.load().then(() => currentUserService.load().then(() => translationService.load()));
+  });
+}
+
+function detectIE() {
+  const ua = window.navigator.userAgent;
+  const msie = ua.indexOf('MSIE ');
+  if (msie > 0) {
+    // IE 10 or older => return version number
+    return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+  }
+  const trident = ua.indexOf('Trident/');
+  if (trident > 0) {
+    // IE 11 => return version number
+    const rv = ua.indexOf('rv:');
+    return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+  }
+  const edge = ua.indexOf('Edge/');
+  if (edge > 0) {
+    // Edge (IE 12+) => return version number
+    return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+  }
+  // other browser
+  return false;
 }

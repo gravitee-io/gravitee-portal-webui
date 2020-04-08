@@ -444,6 +444,10 @@
   "applications": {
     "title": "Applications"
   },
+  "browserNotSupported": {
+    "message": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/\">upgrade your browser</a> to improve your experience.",
+    "title": "Browser not supported"
+  },
   "catalog": {
     "defaultView": "All the APIs",
     "display": {
@@ -764,6 +768,7 @@
     "analyticsApplication": "Analytics",
     "applicationCreation": "Create an application",
     "applications": "Applications",
+    "browserNotSupported": "Browser not supported",
     "catalog": "Catalog",
     "catalogApi": "General informations",
     "catalogApiContact": "Contact",

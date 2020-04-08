@@ -46,6 +46,7 @@ import { SinglePageComponent } from './pages/single-page/single-page.component';
 import { SubscriptionsComponent } from './pages/subscriptions/subscriptions.component';
 import { SubscribeGuardService } from './services/subscribe-guard.service';
 import { ApplicationGeneralComponent } from './pages/application/application-general/application-general.component';
+import { BrowserNotSupportedComponent } from './pages/browser-not-supported/browser-not-supported.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ApplicationCreationComponent } from './pages/application/application-creation/application-creation.component';
 import { GvButtonCreateApplicationComponent } from './components/gv-button-create-application/gv-button-create-application.component';
@@ -370,6 +371,7 @@ export const routes: Routes = [
       },
     ]
   },
+  { path: 'browser-not-supported', component: BrowserNotSupportedComponent, data: { title: i18n('route.browserNotSupported') } },
   { path: '**', component: NotFoundComponent, data: { title: i18n('route.notFound') } }
 ];
 
