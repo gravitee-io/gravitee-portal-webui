@@ -444,6 +444,10 @@
   "applications": {
     "title": "Mes applications"
   },
+  "browserNotSupported": {
+    "message": "Votre navigateur est <strong>obsolète</strong>. Veuillez le <a href=\"http://browsehappy.com/\" target=\"_blank\">mettre à jour</a> afin d'améliorer votre navigation.",
+    "title": "Navigateur non supporté"
+  },
   "catalog": {
     "defaultView": "Toutes les APIs",
     "display": {
@@ -764,6 +768,7 @@
     "analyticsApplication": "Analytics",
     "applicationCreation": "Créer une appllication",
     "applications": "Applications",
+    "browserNotSupported": "Navigateur non supporté",
     "catalog": "Catalogue",
     "catalogApi": "Informations générales",
     "catalogApiContact": "Contact",

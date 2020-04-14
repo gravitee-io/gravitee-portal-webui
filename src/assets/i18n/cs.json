@@ -444,6 +444,10 @@
   "applications": {
     "title": "Moje aplikace"
   },
+  "browserNotSupported": {
+    "message": "Používáte <strong> zastaralý </strong> prohlížeč. Chcete-li vylepšit svůj zážitek, <a href=\"http://browsehappy.com/\"> upgradujte svůj prohlížeč </a>.",
+    "title": "Prohlížeč není podporován"
+  },
   "catalog": {
     "defaultView": "Všechna API",
     "display": {
@@ -764,6 +768,7 @@
     "analyticsApplication": "Analytics",
     "applicationCreation": "Vytvořte aplikaci",
     "applications": "Aplikace",
+    "browserNotSupported": "Prohlížeč není podporován",
     "catalog": "Katalog",
     "catalogApi": "Obecné informace",
     "catalogApiContact": "Kontakt",
