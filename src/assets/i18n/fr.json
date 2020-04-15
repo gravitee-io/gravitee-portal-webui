@@ -134,10 +134,8 @@
       "title": "Client secret"
     },
     "delete": {
-      "cancel": "Annuler",
       "label": "Supprimer",
-      "message": "Êtes-vous sûr de vouloir supprimer cette application ?",
-      "ok": "Valider"
+      "message": "Êtes-vous sûr de vouloir supprimer cette application ?"
     },
     "description": {
       "label": "Décrire le but de cette application",
@@ -277,6 +275,10 @@
       "title": "Abonnements"
     },
     "oauth2": "Intégration OAuth2",
+    "renewSecret": {
+      "label": "Renouveler le secret",
+      "message": "Êtes-vous sûr de vouloir renouveler le secret de votre application ?<br/> En renouvelant le secret, vous ne pourrez plus générer de nouveaux jetons d'accès et appeler l'API."
+    },
     "save": "Sauvegarder",
     "subscriptions": {
       "api": "API",
@@ -315,6 +317,7 @@
     },
     "success": {
       "delete": "Votre application a été supprimée avec succès",
+      "renewSecret": "Le secret de votre application a été renouvelé avec succès",
       "save": "Votre application a été mise à jour avec succès"
     },
     "type": {
@@ -481,14 +484,14 @@
   },
   "cookies": {
     "actions": {
-      "ok" : "J'ai compris",
-      "decline" : "Je refuse"
+      "decline": "Je refuse",
+      "ok": "J'ai compris"
     },
-    "confirmation" : "Si vous refusez, vos informations de navigations ne seront plus collectées en visitant ce site. En plus des cookies nécessaires à la navigation, un seul cookie sera utilisé dans votre navigateur pour se rappeler votre souhait de ne pas être enregistré.",
+    "confirmation": "Si vous refusez, vos informations de navigations ne seront plus collectées en visitant ce site. En plus des cookies nécessaires à la navigation, un seul cookie sera utilisé dans votre navigateur pour se rappeler votre souhait de ne pas être enregistré.",
     "googleAnalyticsDescription": "Autoriser les cookies pour Google Analytics",
-    "information" : {
-      "common" : "Ce site stocke des cookies sur votre ordinateur. Ces cookies servent à enregistrer vos préférences de navigation et vos informations de connexions. Ces informations servent à améliorer et personnaliser votre navigation.",
-      "withAnalytics" : "Des données statistiques et des métriques sur les visiteurs de ce site peuvent également être collectées (via <a href=\"https://policies.google.com/privacy\" target=\"_blank\">Google Analytics</a>)."
+    "information": {
+      "common": "Ce site stocke des cookies sur votre ordinateur. Ces cookies servent à enregistrer vos préférences de navigation et vos informations de connexions. Ces informations servent à améliorer et personnaliser votre navigation.",
+      "withAnalytics": "Des données statistiques et des métriques sur les visiteurs de ce site peuvent également être collectées (via <a href=\"https://policies.google.com/privacy\" target=\"_blank\">Google Analytics</a>)."
     },
     "manage": "Vous pouvez gérer vos préférences en matière de cookies ici.",
     "success": {
