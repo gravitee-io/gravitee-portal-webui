@@ -1,0 +1,111 @@
+{
+  "company": {
+    "name": "Gravitee.io"
+  },
+  "portal": {
+    "title": "Gravitee.io Portal",
+    "entrypoint": "http://localhost:8082",
+    "apikeyHeader": "X-Gravitee-Api-Key",
+    "support": {
+      "enabled": true
+    },
+    "applicationCreation": {
+      "enabled": true
+    },
+    "userCreation": {
+      "enabled": true
+    },
+    "apis": {
+      "tilesMode": {
+        "enabled": true
+      },
+      "viewMode": {
+        "enabled": true
+      },
+      "apiHeaderShowTags": {
+        "enabled": false
+      },
+      "apiHeaderShowViews": {
+        "enabled": false
+      }
+    },
+    "analytics": {
+      "enabled": false,
+      "trackingId": ""
+    },
+    "rating": {
+      "enabled": true,
+      "comment": {
+        "mandatory": false
+      }
+    },
+    "uploadMedia": {
+      "enabled": true,
+      "maxSizeInBytes": 1000000
+    }
+  },
+  "authentication": {
+    "forceLogin": {
+      "enabled": false
+    },
+    "localLogin": {
+      "enabled": true
+    },
+    "google": {},
+    "github": {},
+    "oauth2": {
+      "color": "#0076b4",
+      "scope": []
+    }
+  },
+  "scheduler": {
+    "notificationsInSeconds": 1000
+  },
+  "documentation": {
+    "url": "https://docs.gravitee.io"
+  },
+  "plan": {
+    "security": {
+      "apikey": {
+        "enabled": true
+      },
+      "oauth2": {
+        "enabled": true
+      },
+      "keyless": {
+        "enabled": false
+      },
+      "jwt": {
+        "enabled": true
+      }
+    }
+  },
+  "apiReview": {
+    "enabled": false
+  },
+  "analytics": {
+    "clientTimeout": 30000
+  },
+  "application": {
+    "registration": {
+      "enabled": true
+    },
+    "types": {
+      "simple": {
+        "enabled": true
+      },
+      "browser": {
+        "enabled": true
+      },
+      "web": {
+        "enabled": true
+      },
+      "backend_to_backend": {
+        "enabled": true
+      },
+      "native": {
+        "enabled": true
+      }
+    }
+  }
+}

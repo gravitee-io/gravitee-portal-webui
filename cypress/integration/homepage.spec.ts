@@ -13,16 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { browser, by, element } from 'protractor';
-
-export class AppPage {
-
-  navigateTo() {
-    return browser.get(browser.baseUrl) as Promise<any>;
-  }
-
-  getTitleText() {
-    return element(by.css('app-root .layout__header__homepage__title')).getText() as Promise<string>;
-  }
-
-}
+it('Load homepage', () => {
+  const baseUrl = 'http://localhost:4200';
+  cy.visit(baseUrl);
+  cy.contains('Libérez la puissance de vos APIs.');
+});
