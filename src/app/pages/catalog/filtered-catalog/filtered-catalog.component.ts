@@ -64,6 +64,7 @@ export class FilteredCatalogComponent implements OnInit {
     pagination: 'pagination',
     filter: 'filter'
   };
+  private loaded: boolean;
 
   constructor(private apiService: ApiService,
               private portalService: PortalService,
@@ -85,6 +86,7 @@ export class FilteredCatalogComponent implements OnInit {
     this.categoryApiQuery = this.activatedRoute.snapshot.data.categoryApiQuery;
 
     this.activatedRoute.queryParamMap.subscribe(params => {
+      this.loaded = false;
       const page = parseInt(params.get(SearchQueryParam.PAGE), 10) || 1;
       const size = parseInt(params.get(SearchQueryParam.SIZE), 10) || 6;
       const categoryPath = this._getCategoryPath();
@@ -113,11 +115,9 @@ export class FilteredCatalogComponent implements OnInit {
   private _catchLoading(err) {
     if (err instanceof TimeTooLongError) {
       // @ts-ignore
-      this.promotedApi = new Promise(null);
-      if (this.randomList.length === 0) {
+      if (!this.loaded) {
+        this.promotedApi = new Promise(null);
         this.randomList = new Array(4).fill(new Promise(null));
-      }
-      if (this.allApis.length === 0) {
         this.allApis = new Array(this.size).fill(new Promise(null));
       }
     } else {
@@ -150,7 +150,9 @@ export class FilteredCatalogComponent implements OnInit {
     return Promise.all([
       this._loadRandomList(),
       this._loadCards(promotedApiPromise)
-    ]);
+    ]).finally(() => {
+      this.loaded = true;
+    });
   }
 
   _loadRandomList() {
@@ -190,6 +192,7 @@ export class FilteredCatalogComponent implements OnInit {
     const _categoryPromise = this.portalService.getViewByViewId({ viewId: this.currentView })
       .toPromise()
       .then((response) => {
+        this.loaded = true;
         this.category = response;
         this.description = this.category.description;
       });
