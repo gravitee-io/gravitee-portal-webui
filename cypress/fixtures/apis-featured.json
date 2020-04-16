@@ -1,0 +1,129 @@
+{
+  "data": [
+    {
+      "id": "5015417e-1d9a-4741-9541-7e1d9ae741f3",
+      "name": "Echo (5 plans)",
+      "version": "v1",
+      "description": "The echo api is the best echo api that exists! She repeats what you ask like a parrot! It's awesome. \nIf you hesitate between several APIs, take this one, you will not be disappointed",
+      "draft": false,
+      "running": true,
+      "labels": [],
+      "owner": {
+        "id": "3c0712c4-4402-4f4c-8712-c444029f4ce2",
+        "display_name": "admin"
+      },
+      "updated_at": "2020-03-24T16:11:26.447Z",
+      "views": [],
+      "rating_summary": {
+        "average": 4,
+        "count": 1
+      },
+      "_links": {
+        "self": "http://localhost:4200/portal/environments/DEFAULT/apis/5015417e-1d9a-4741-9541-7e1d9ae741f3",
+        "links": "http://localhost:4200/portal/environments/DEFAULT/apis/5015417e-1d9a-4741-9541-7e1d9ae741f3/links",
+        "metrics": "http://localhost:4200/portal/environments/DEFAULT/apis/5015417e-1d9a-4741-9541-7e1d9ae741f3/metrics",
+        "pages": "http://localhost:4200/portal/environments/DEFAULT/apis/5015417e-1d9a-4741-9541-7e1d9ae741f3/pages",
+        "picture": "http://localhost:4200/portal/environments/DEFAULT/apis/5015417e-1d9a-4741-9541-7e1d9ae741f3/picture",
+        "plans": "http://localhost:4200/portal/environments/DEFAULT/apis/5015417e-1d9a-4741-9541-7e1d9ae741f3/plans",
+        "ratings": "http://localhost:4200/portal/environments/DEFAULT/apis/5015417e-1d9a-4741-9541-7e1d9ae741f3/ratings"
+      },
+      "public": true
+    },
+    {
+      "id": "21cddedb-bd86-4f14-8dde-dbbd86df1499",
+      "name": "Foobar API",
+      "version": "1.0",
+      "description": "Best seller",
+      "draft": false,
+      "running": true,
+      "labels": [],
+      "owner": {
+        "id": "3c0712c4-4402-4f4c-8712-c444029f4ce2",
+        "display_name": "admin"
+      },
+      "updated_at": "2019-11-27T07:22:58.44Z",
+      "views": [],
+      "rating_summary": {
+        "average": 4,
+        "count": 1
+      },
+      "_links": {
+        "self": "http://localhost:4200/portal/environments/DEFAULT/apis/21cddedb-bd86-4f14-8dde-dbbd86df1499",
+        "links": "http://localhost:4200/portal/environments/DEFAULT/apis/21cddedb-bd86-4f14-8dde-dbbd86df1499/links",
+        "metrics": "http://localhost:4200/portal/environments/DEFAULT/apis/21cddedb-bd86-4f14-8dde-dbbd86df1499/metrics",
+        "pages": "http://localhost:4200/portal/environments/DEFAULT/apis/21cddedb-bd86-4f14-8dde-dbbd86df1499/pages",
+        "picture": "http://localhost:4200/portal/environments/DEFAULT/apis/21cddedb-bd86-4f14-8dde-dbbd86df1499/picture",
+        "plans": "http://localhost:4200/portal/environments/DEFAULT/apis/21cddedb-bd86-4f14-8dde-dbbd86df1499/plans",
+        "ratings": "http://localhost:4200/portal/environments/DEFAULT/apis/21cddedb-bd86-4f14-8dde-dbbd86df1499/ratings"
+      },
+      "public": true
+    },
+    {
+      "id": "590d2cb7-6344-4bc0-8d2c-b76344dbc0c5",
+      "name": "Supernova Cloud",
+      "version": "v.1.0",
+      "description": "Tempore quo primis auspiciis in mundanum fulgorem surgeret victura dum erunt homines Roma, ut augeretur sublimibus incrementis, foedere pacis aeternae Virtus convenit atque plerumque dissidente",
+      "draft": false,
+      "running": true,
+      "labels": [
+        "Yeah",
+        "Whaou"
+      ],
+      "owner": {
+        "id": "34c2cf9f-fef5-4145-82cf-9ffef50145b6",
+        "display_name": "adminold"
+      },
+      "updated_at": "2019-11-27T07:18:56.024Z",
+      "views": [],
+      "rating_summary": {
+        "count": 0
+      },
+      "_links": {
+        "self": "http://localhost:4200/portal/environments/DEFAULT/apis/590d2cb7-6344-4bc0-8d2c-b76344dbc0c5",
+        "links": "http://localhost:4200/portal/environments/DEFAULT/apis/590d2cb7-6344-4bc0-8d2c-b76344dbc0c5/links",
+        "metrics": "http://localhost:4200/portal/environments/DEFAULT/apis/590d2cb7-6344-4bc0-8d2c-b76344dbc0c5/metrics",
+        "pages": "http://localhost:4200/portal/environments/DEFAULT/apis/590d2cb7-6344-4bc0-8d2c-b76344dbc0c5/pages",
+        "picture": "http://localhost:4200/portal/environments/DEFAULT/apis/590d2cb7-6344-4bc0-8d2c-b76344dbc0c5/picture",
+        "plans": "http://localhost:4200/portal/environments/DEFAULT/apis/590d2cb7-6344-4bc0-8d2c-b76344dbc0c5/plans",
+        "ratings": "http://localhost:4200/portal/environments/DEFAULT/apis/590d2cb7-6344-4bc0-8d2c-b76344dbc0c5/ratings"
+      },
+      "public": true
+    },
+    {
+      "id": "20b71404-1f6f-4a4d-b714-041f6fba4d28",
+      "name": "Translate",
+      "version": "1.1",
+      "description": "Google translate API",
+      "draft": false,
+      "running": true,
+      "labels": [
+        "Learn"
+      ],
+      "owner": {
+        "id": "34c2cf9f-fef5-4145-82cf-9ffef50145b6",
+        "display_name": "adminold"
+      },
+      "updated_at": "2019-11-27T07:26:41.535Z",
+      "views": [],
+      "rating_summary": {
+        "average": 3,
+        "count": 1
+      },
+      "_links": {
+        "self": "http://localhost:4200/portal/environments/DEFAULT/apis/20b71404-1f6f-4a4d-b714-041f6fba4d28",
+        "links": "http://localhost:4200/portal/environments/DEFAULT/apis/20b71404-1f6f-4a4d-b714-041f6fba4d28/links",
+        "metrics": "http://localhost:4200/portal/environments/DEFAULT/apis/20b71404-1f6f-4a4d-b714-041f6fba4d28/metrics",
+        "pages": "http://localhost:4200/portal/environments/DEFAULT/apis/20b71404-1f6f-4a4d-b714-041f6fba4d28/pages",
+        "picture": "http://localhost:4200/portal/environments/DEFAULT/apis/20b71404-1f6f-4a4d-b714-041f6fba4d28/picture",
+        "plans": "http://localhost:4200/portal/environments/DEFAULT/apis/20b71404-1f6f-4a4d-b714-041f6fba4d28/plans",
+        "ratings": "http://localhost:4200/portal/environments/DEFAULT/apis/20b71404-1f6f-4a4d-b714-041f6fba4d28/ratings"
+      },
+      "public": true
+    }
+  ],
+  "metadata": {
+    "data": {
+      "total": 4
+    }
+  }
+}
