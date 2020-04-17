@@ -75,6 +75,7 @@ export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
   private homepageBackgroundHeight: number;
   private interval: any;
   public numberOfPortalNotifications: any;
+
   constructor(
     private titleService: Title,
     private translateService: TranslateService,
@@ -200,6 +201,15 @@ export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
 
   @HostListener('window:scroll')
   onScroll() {
+    this.computeMenuMode();
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.computeHomepageHeight();
+  }
+
+  private computeMenuMode() {
     const pageYOffset = window.pageYOffset;
     window.requestAnimationFrame(() => {
       if (this.isHomepage()) {
@@ -211,11 +221,6 @@ export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
         this.isSticky = !(pageYOffset === 0);
       }
     });
-  }
-
-  @HostListener('window:resize')
-  onResize() {
-    this.computeHomepageHeight();
   }
 
   private computeHomepageHeight() {
@@ -343,7 +348,7 @@ export class AppComponent implements AfterViewInit, OnInit, OnDestroy {
     } else {
       this._clearMenuSlots();
     }
-    this.isSticky = false;
+    this.computeMenuMode();
     this.computeHomepageHeight();
   }
 
