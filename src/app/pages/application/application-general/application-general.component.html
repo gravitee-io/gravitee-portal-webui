@@ -26,7 +26,7 @@
         </div>
         
         <div class="application__image">
-          <gv-identity-picture [picture]="applicationForm.value.picture || application.picture || application._links.picture" [display_name]="application.name"></gv-identity-picture>
+          <gv-identity-picture [picture]="applicationForm.value.picture || application.picture || application._links.picture" [display_name]="application.name + '  ' + application.applicationType"></gv-identity-picture>
           <app-gv-file-upload *ngIf="canUpdate" [label]="'application.change_picture' | translate" (fileLoad)="onFileLoad($event)"></app-gv-file-upload>
         </div>
 
