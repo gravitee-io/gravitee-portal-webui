@@ -188,7 +188,11 @@ export const routes: Routes = [
         path: 'login',
         component: LoginComponent,
         canActivate: [AuthGuardService],
-        data: { title: i18n('route.login'), expectedRole: Role.GUEST, animation: { type: 'fade' } }
+        data: {
+          title: i18n('route.login'),
+          expectedRole: Role.GUEST,
+          animation: { type: 'fade' }
+        }
       },
       {
         path: 'account',
