@@ -22,6 +22,7 @@ import { Router } from '@angular/router';
 import { getApplicationTypeIcon } from '@gravitee/ui-components/src/lib/theme';
 import StatusEnum = Subscription.StatusEnum;
 import { ConfigurationService } from 'src/app/services/configuration.service';
+import { getPictureDisplayName } from '@gravitee/ui-components/src/lib/item';
 
 @Component({
   selector: 'app-subscriptions',
@@ -64,7 +65,7 @@ export class SubscriptionsComponent implements OnInit {
     this.options = {
       selectable: true,
       data: [
-        { field: '_links.picture', type: 'image', alt: (item) => item.name + '  ' + item.applicationType, width: '15%' },
+        { field: '_links.picture', type: 'image', alt: (item) => getPictureDisplayName(item), width: '15%' },
         {
           field: 'name',
           label: i18n('subscriptions.applications.name'),
@@ -88,7 +89,7 @@ export class SubscriptionsComponent implements OnInit {
     this.optionsSubscriptions = {
       selectable: true,
       data: [
-        { field: 'api._links.picture', type: 'image', alt: (item) => item.api.name + '  ' + item.api.version },
+        { field: 'api._links.picture', type: 'image', alt: (item) => getPictureDisplayName(item.api) },
         { field: 'api.name', tag: 'api.version', label: i18n('subscriptions.subscriptions.api') },
         { field: 'plan.name', label: i18n('subscriptions.subscriptions.plan') },
         { field: 'subscription.start_at', type: 'date', label: i18n('subscriptions.subscriptions.start_date') },
