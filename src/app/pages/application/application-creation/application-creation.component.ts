@@ -289,13 +289,13 @@ export class ApplicationCreationComponent implements OnInit {
     this.creationInProgress = true;
     const applicationInput = this.applicationForm.getRawValue() as ApplicationInput;
 
-    this.applicationService.createApplication({ ApplicationInput: applicationInput })
+    this.applicationService.createApplication({ applicationInput })
       .toPromise()
       .then((application) => {
         this.createdApplication = application;
         const subscriptions = this.subscribeList.map(async (s) => {
           return this.subscriptionService.createSubscription({
-            SubscriptionInput: {
+            subscriptionInput: {
               application: application.id,
               plan: s.plan.id,
               request: s.request

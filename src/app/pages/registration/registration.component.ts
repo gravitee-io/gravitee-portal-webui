@@ -54,7 +54,7 @@ export class RegistrationComponent implements OnInit {
         confirmation_page_url: window.location.href + '/confirm'
       };
       this.reCaptchaService.execute('registration').then(() => {
-        this.usersService.registerNewUser({ RegisterUserInput: input })
+        this.usersService.registerNewUser({ registerUserInput: input })
           .toPromise()
           .then(() => this.isSubmitted = true)
           .catch(() => {});

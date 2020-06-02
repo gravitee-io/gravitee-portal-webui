@@ -19,7 +19,7 @@ import '@gravitee/ui-components/wc/gv-file-upload';
 import { marker as i18n } from '@biesbjerg/ngx-translate-extract-marker';
 import { AppComponent } from '../../../app.component';
 import { CurrentUserService } from '../../../services/current-user.service';
-import { User, UserService } from '@gravitee/ng-portal-webclient';
+import {User, UserInput, UserService} from '@gravitee/ng-portal-webclient';
 import { EventService, GvEvent } from '../../../services/event.service';
 import { NotificationService } from '../../../services/notification.service';
 
@@ -89,9 +89,9 @@ export class UserAccountComponent implements OnInit, OnDestroy {
   }
 
   submit() {
-    const UserInput = { id:  this.currentUser.id, avatar: this.userForm.get('avatar').value };
+    const userInput: UserInput = { id:  this.currentUser.id, avatar: this.userForm.get('avatar').value };
     this.isSaving = true;
-    this.userService.updateCurrentUser({ UserInput })
+    this.userService.updateCurrentUser({ userInput })
       .toPromise()
       .then((user) => {
         this.currentUserService.set(user);

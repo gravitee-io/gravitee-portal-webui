@@ -67,7 +67,7 @@ export class ApplicationNotificationsComponent implements OnInit {
       this.hooks.splice(this.hooks.indexOf(hook.id), 1);
     }
     this.applicationService.updateApplicationNotifications(
-      { applicationId, NotificationInput: { hooks: this.hooks } }).toPromise().then(_ => {
+      { applicationId, notificationInput: { hooks: this.hooks } }).toPromise().then(_ => {
       this.notificationService.success(i18n('application.notifications.saveSuccess'));
     });
   }

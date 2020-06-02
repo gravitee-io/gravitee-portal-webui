@@ -72,7 +72,7 @@ export class ResetPasswordConfirmationComponent implements OnInit {
         lastname: this.userFromToken.lastname
       };
       this.reCaptchaService.execute('reset_password_confirmation').then(() => {
-        this.usersService.finalizeUserRegistration({ FinalizeRegistrationInput: input })
+        this.usersService.finalizeUserRegistration({ finalizeRegistrationInput: input })
           .toPromise()
           .then(() => this.isSubmitted = true)
           .catch(() => {
