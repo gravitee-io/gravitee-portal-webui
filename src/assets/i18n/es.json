@@ -796,7 +796,7 @@
     "apis": "APIs destacadas",
     "explore": "Buscar APIs",
     "signup": "Registrarse",
-    "title": "Portal de Desarrolladores del Banco del Bienestar."
+    "title": "Libera el poder de tus APIs."
   },
   "login": {
     "button": "Ingresar",
@@ -912,7 +912,7 @@
     }
   },
   "site": {
-    "title": "Banco del Bienestar"
+    "title": "Portal de APIs | Gravitee.io"
   },
   "subscriptions": {
     "applications": {
