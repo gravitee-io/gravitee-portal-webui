@@ -1,0 +1,951 @@
+{
+  "analytics": {
+    "empty": "Sin resultados para desplegar",
+    "timeframes": {
+      "day": "Dia",
+      "days": "dias",
+      "hour": "Hora",
+      "hours": "horas",
+      "minutes": "Minutos"
+    }
+  },
+  "api": {
+    "createdAt": "Creado en",
+    "deployedAt": "Desplegado en",
+    "description": "Descripcion",
+    "endpoint": "Endpoint",
+    "information": {
+      "about": "Acerca de",
+      "beFirstToRate": "Se el primero en calificar",
+      "categories": "Categorias",
+      "entrypoints": "URL de acceso",
+      "labels": "Etiquetas",
+      "metrics": "Metricas",
+      "ratings": "Calificaciones",
+      "resources": "Recursos"
+    },
+    "list": {
+      "connectedApps": "Aplicaciones conectadas"
+    },
+    "name": "Nombre",
+    "owner": "Propietario",
+    "publishedAt": "Publicado en",
+    "version": "Version"
+  },
+  "apiGeneral": {
+    "description": "Descripción",
+    "giveRating": "Comparte tu opinion",
+    "rate": "Nota",
+    "rateComment": "Explícanos por qué",
+    "rateTitle": "¿Recomendarías esta API?",
+    "rateTitlePlaceholder": "En una palabra",
+    "ratingAnswerCreated": "Su respuesta ha sido enviada",
+    "ratingAnswerDeleted": "Tu respuesta ha sido eliminada",
+    "ratingCreated": "Tu opinión ha sido enviada",
+    "ratingDeleted": "Tu comentario ha sido eliminado",
+    "ratingUpdated": "Gracias por darnos tu consejo",
+    "ratingsSortOptions": {
+      "answers": "Más comentado",
+      "best": "Mejor valorado",
+      "newest": "Más reciente",
+      "oldest": "El más viejo",
+      "worst": "La calificación más baja"
+    },
+    "showMore": "Mostrar más",
+    "userRatings": "Calificaciones del usuario"
+  },
+  "apiSubscribe": {
+    "apps": {
+      "chooseApp": "Elige una aplicación",
+      "comment": "Deja un comentario al propietario de la API",
+      "connectedApps": "You already have <b>{count}</b> {count, plural, =0{} one{connected application} other{connected applications}} with the API <b>{apiName}</b>.",
+      "createApp": "I want to create an application",
+      "description": "The app is the link between you, as a consumer, and subscribing to an API plan.",
+      "missingClientId": "Missing client_id",
+      "noAvailableApplications": "There are no apps available."
+    },
+    "chooseApp": {
+      "title": "Elección de aplicación"
+    },
+    "choosePlan": {
+      "title": "Elección del plan"
+    },
+    "connectedApps": "{count, plural, =0{} one{Connected application} other{Connected applications}} to {planName}",
+    "errors": {
+      "information": "Se produjo un error durante la suscripción.",
+      "notConnected": "Inicie sesión o cree una cuenta para suscribirse a la API",
+      "sorry": "Lo siento"
+    },
+    "exit": "Salida",
+    "nextStep": "Siguiente",
+    "plan": "Plan",
+    "plans": {
+      "description": "Un catálogo esencial para organizar mis API",
+      "sample": "Puedes comenzar a usar la API",
+      "title": "Planes y características"
+    },
+    "previousStep": "Previo",
+    "success": {
+      "congratulations": "Bravo !",
+      "discoverApi": "Comienza a descubrir la API",
+      "goToHome": "Volver a inicio",
+      "subscriptionAccepted": "¡Se acepta la suscripción de la aplicación <b> {appName} </b> al plan <b> {planName} </b> de la API <b> {apiName} </b>!",
+      "subscriptionKey": "Aquí está su clave personal para acceder a la API",
+      "subscriptionPending": "La suscripción de la aplicación <b> {appName} </b> al plan <b> {planName} </b> de la API <b> {apiName} </b> se está validando.",
+      "subscriptionRejected": "Se rechaza la suscripción de la aplicación <b> {appName} </b> al plan <b> {planName} </b> de la API <b> {apiName} </b>."
+    },
+    "validate": {
+      "askConfirmation": "La suscripción de la aplicación <b> {appName} </b> al plan <b> {planName} </b> de la API <b> {apiName} </b> está a punto de finalizar.",
+      "information": "{hasAutoValidation, select, true {La validación es automática, una vez que la suscripción haya finalizado podrás usar la API.} other {La validación de tu suscripción requiere la aprobación del propietario, recibirás un correo electrónico tan pronto como se valide tu acceso . }} ",
+      "notCompleted": "La suscripción a la API <b> {apiName} </b> no está completa, regrese a los pasos anteriores e ingrese la información que falta.",
+      "subscription": "Validar la solicitud",
+      "title": "Validación"
+    }
+  },
+  "application": {
+    "analytics": {
+      "displayLogs": "View logs",
+      "exportCSV": "Export in CSV format",
+      "filters": {
+        "advanced": {
+          "hide": "Hide advanced filters",
+          "show": "Show advanced filters"
+        },
+        "api": {
+          "label": "API",
+          "title": "Select an API"
+        },
+        "methods": {
+          "label": "HTTP methods",
+          "title": "Select an HTTP method"
+        },
+        "path": {
+          "label": "Path",
+          "title": "Select path"
+        },
+        "payloads": {
+          "label": "Message Body",
+          "title": "Text to search for in message bodies"
+        },
+        "requestId": {
+          "label": "Request ID",
+          "title": "Enter a request ID"
+        },
+        "responseTimes": {
+          "label": "Response time",
+          "title": "Select a response time interval"
+        },
+        "status": {
+          "label": "http status",
+          "title": "Select HTTP status"
+        },
+        "transactionId": {
+          "label": "Transaction Id",
+          "title": "Select a transaction ID"
+        }
+      },
+      "search": "Search"
+    },
+    "change_picture": "Change picture",
+    "client_id": {
+      "label": "Client ID",
+      "title": "Client ID"
+    },
+    "client_secret": {
+      "label": "Client secret",
+      "title": "Client secret"
+    },
+    "delete": {
+      "cancel": "Cancel",
+      "message": "Are you sure you want to delete this application?",
+      "ok": "OK"
+    },
+    "description": {
+      "label": "Describe the goal of this application",
+      "title": "Description"
+    },
+    "general": "Général",
+    "information": {
+      "createdDate": "Created",
+      "lastUpdate": "Updated",
+      "owner": "Owner",
+      "title": "Information",
+      "type": "Type"
+    },
+    "list": {
+      "connectedApis": "Subscribed APIs"
+    },
+    "log": {
+      "request": "Solicitud",
+      "requestBody": "Cuerpo de solicitud",
+      "requestContentLength": "Tamaño del contenido enviado",
+      "requestHeaders": "Encabezados de solicitud HTTP",
+      "requestId": "ID de solicitud",
+      "response": "Respuesta",
+      "responseBody": "Cuerpo de respuesta",
+      "responseContentLength": "Tamaño del contenido recibido",
+      "responseHeaders": "Encabezados de respuesta HTTP",
+      "responseTime": "Tiempo de respuesta",
+      "transactionId": "ID de transacción"
+    },
+    "logs": {
+      "api": "API",
+      "date": "Fecha",
+      "displayAnalytics": "Ver análisis",
+      "method": "Método",
+      "path": "Ruta",
+      "plan": "Plan",
+      "responseTime": "Tiempo de respuesta",
+      "status": "Estado",
+      "title": "Registros"
+    },
+    "members": {
+      "add": {
+        "add": "Añadir",
+        "reset": "Reiniciar",
+        "role": {
+          "name": "Rol",
+          "placeholder": "Selecciona un rol"
+        },
+        "success": "Nuevo miembro agregado",
+        "title": "Agregar un miembro",
+        "user": {
+          "name": "Usuario",
+          "placeholder": "Buscar un usuario ..."
+        }
+      },
+      "inherited": {
+        "groupTitle": "{nbMembers} members inherited from \"{groupName}\" group",
+          "hide": "Esconder",
+          "show": "Mostrar",
+          "title": "Miembros heredados"
+        },
+        "list": {
+          "member": "Miembro",
+          "remove": {
+            "message": "¿Estás seguro de eliminar a este miembro?",
+            "success": "Miembro eliminado",
+            "title": "Eliminar miembro"
+          },
+          "role": "Rol",
+          "success": "Rol actualizado",
+          "title": "Lista de miembros"
+      },
+      "transferOwnership": {
+        "confirm": {
+          "cancel": "Cancelar",
+          "message": "This action cannot be undone.<br/> The new owner will be <b>{name}</b>.<br/> You will be redirected to the list of applications.",
+          "ok": "Entiendo, transfiera esta aplicación"
+        },
+        "currentPrimaryOwnerNewRole": {
+          "name": "Nuevo rol",
+          "placeholder": "Seleccione el nuevo rol para el propietario principal actual"
+        },
+        "information": "Dar acceso completo a esta aplicación a otro usuario.",
+        "newPrimaryOwner": {
+          "name": "Nuevo propietario primario",
+          "placeholder": "Buscar un nuevo propietario primario ..."
+        },
+        "reset": "Reiniciar",
+        "success": "Propietario principal actualizado",
+        "title": "Transferir propiedad",
+        "transfer": "Transferir"
+      }
+    },
+    "name": {
+      "label": "Nombre de la app",
+      "title": "Nombre de la aplicación"
+    },
+    "notifications": {
+      "NEW_SUPPORT_TICKET": {
+        "description": "Recibirá una notificación cuando se cree un ticket relacionado con su aplicación",
+        "label": "Nuevo ticket de soporte"
+      },
+      "SUBSCRIPTION": {
+        "title": "Suscripción"
+      },
+      "SUBSCRIPTION_ACCEPTED": {
+        "description": "Recibirá una notificación cuando se acepte una suscripción.",
+        "label": "Suscripción aceptada"
+      },
+      "SUBSCRIPTION_CLOSED": {
+        "description": "Recibirá una notificación cuando se cierre una suscripción.",
+        "label": "Suscripción cerrada"
+      },
+      "SUBSCRIPTION_NEW": {
+        "description": "Recibirá una notificación cuando se solicite una nueva suscripción",
+        "label": "Nueva suscripción"
+      },
+      "SUBSCRIPTION_PAUSED": {
+        "description": "Recibirá una notificación cuando se pause una suscripción",
+        "label": "Pausar suscripción"
+      },
+      "SUBSCRIPTION_REJECTED": {
+        "description": "You will receive a notification when a subscription is rejected",
+        "label": "Suscripción rechazada"
+      },
+      "SUBSCRIPTION_RESUMED": {
+        "description": "Recibirá una notificación cuando una suscripción se reactive después de una pausa",
+        "label": "Suscripción reactivada"
+      },
+      "SUBSCRIPTION_TRANSFERRED": {
+        "description": "Recibirá una notificación cuando se transfiera una suscripción",
+        "label": "Suscripción transferida"
+      },
+      "SUPPORT": {
+        "title": "Soporte"
+      },
+      "header": "¿A qué eventos te quieres suscribir?",
+      "saveSuccess": "Sus suscripciones de notificaciones para esta aplicación se han guardado",
+      "title": "Suscripciones"
+    },
+    "oauth2": "Integración OAuth2",
+    "renewSecret": {
+      "label": "Renueva el secreto",
+      "message": "¿Estás seguro de que deseas renovar el secreto de tu aplicación? <br/> Al renovar el secreto, ya no podrás generar nuevos tokens de acceso y llamar a la API."
+    },
+    "subscriptions": {
+      "api": "API",
+      "apiKey": {
+        "created_at": "Generado en",
+        "end_at": "Termina en",
+        "ended_at": "Completado en",
+        "expired": {
+          "hide": "Ocultar claves caducadas",
+          "show": "Mostrar claves caducadas"
+        },
+        "revoke": {
+          "label": "Revocar",
+          "message": "¿Estás seguro de que quieres revocar esta clave de API?"
+        },
+        "success": {
+          "revoke": "Su clave API ha sido revocada con éxito"
+        },
+        "title": "Claves API:"
+      },
+      "close": {
+        "message": "¿Estás seguro de que quieres cerrar esta suscripción?",
+        "title": "Cerrar"
+      },
+      "created_at": "Fecha de suscripción",
+      "filters": {
+        "api": {
+          "label": "Selecciona una API",
+          "title": "API"
+        },
+        "status": {
+          "label": "seleccione un estado",
+          "title": "estado"
+        }
+      },
+      "navigateToApi": "Ir a la API",
+      "plan": "Plan",
+      "processed_at": "Fecha de procesamiento",
+      "renew": {
+        "message": "¿Estás seguro de que quieres renovar esta suscripción?",
+        "title": "Renovar"
+      },
+      "selected": {
+        "title": "Información de suscripción"
+      },
+      "start_at": "Fecha de inicio",
+      "status": "estado",
+      "subscribed_by": "Suscrito por",
+      "success": {
+        "close": "Su suscripción ha sido cerrada exitosamente",
+        "renew": "Su suscripción ha sido renovada con éxito"
+      },
+      "title": "Suscripciones"
+    },
+    "success": {
+      "delete": "Su aplicación ha sido eliminada exitosamente",
+      "renewSecret": "El secreto de su aplicación ha sido renovado con éxito.",
+      "save": "Su aplicación ha sido actualizada exitosamente"
+    },
+    "type": {
+      "label": "Tipo de aplicación",
+      "title": "Tipo de aplicación"
+    },
+    "types": "{type, select, BACKEND_TO_BACKEND{Backend to backend} NATIVE{Native} WEB{Web} BROWSER{Browser} SIMPLE{Simple} other{Simple}}"
+  },
+  "applicationCreation": {
+    "exit": "Salida",
+    "general": {
+      "description": {
+        "label": "Descripción",
+        "placeholder": "Solo describe su propósito"
+      },
+      "image": "Imagen de aplicación",
+      "name": {
+        "label": "Nombre de la Aplicación",
+        "placeholder": "Nombre de la aplicación"
+      }
+    },
+    "security": {
+      "description": "Por razones de seguridad, defina solo los tipos que necesita.",
+      "label": "Tipos de derechos autorizados para el cliente."
+    },
+    "step": {
+      "createApp": "Crea la aplicación",
+      "general": "General",
+      "next": "Siguiente",
+      "previous": "Previo",
+      "security": "Seguridad",
+      "subscription": "Suscripción",
+      "validate": "Validación"
+    },
+    "subscription": {
+      "api": {
+        "description": "Encuentre una API para su aplicación"
+      },
+      "comment": "Comentario",
+      "description": "{count, plural, =0{No subscription} one{Only one subscription} other{{count} subscriptions}}",
+      "disabledPlans": "A clientID is required to subscribe to {count, plural, =0{the disabled plan} one{the disabled plan} other{disabled plans}}",
+      "noPlan": "No hay un plan disponible para esta API",
+      "plan": {
+        "description": "Encuentre las API para su aplicación y agregue los planes a los que desea suscribirse"
+      },
+      "remove": "Eliminar",
+      "subscribe": "Suscribir",
+      "validation": {
+        "auto": "Automático",
+        "manual": "Manual",
+        "type": "Validación"
+      }
+    },
+    "validation": {
+      "confirm": "The application \"{name}\" is ready!",
+      "error": {
+        "description": "Se produjo un error durante la creación de la aplicación.",
+        "title": "Lo siento"
+      },
+      "pending": {
+        "description": "Falta información para crear su aplicación. <br/> Verifique que todos los pasos estén validados.",
+        "title": "Estas casi listo"
+      },
+      "subscriptionTitle": "Solicitud de suscripción"
+    }
+  },
+  "applicationType": {
+    "backend_to_backend": {
+      "description": "Máquina a máquina",
+      "title": "De backend a backend"
+    },
+    "browser": {
+      "description": "Angular, React, ...",
+      "title": "SPA"
+    },
+    "native": {
+      "description": "iOS, Android, ...",
+      "title": "Native"
+    },
+    "security": {
+      "authorization_code": {
+        "description": " ",
+        "title": "Código de Autorización"
+      },
+      "clientId": {
+        "description": " El Client_id de la aplicación. Este campo es necesario para suscribirse a cierto tipo de Plan API (OAuth2, JWT).",
+        "label": "Identificación del cliente"
+      },
+      "client_credentials": {
+        "description": " ",
+        "title": "Credenciales del cliente"
+      },
+      "implicit": {
+        "description": " ",
+        "title": "Implícito"
+      },
+      "implicit_hybrid": {
+        "description": " Híbrido",
+        "title": "Implícito"
+      },
+      "password": {
+        "description": "Proporcionado por el propietario del recurso.",
+        "title": "Contraseña"
+      },
+      "redirectUris": {
+        "description": "URI donde el servidor de autorización enviará respuestas OAuth",
+        "label": "Redirigir URIs"
+      },
+      "refresh_token": {
+        "description": " ",
+        "title": "Token de actualización"
+      },
+      "simple": {
+        "description": "Tipo de aplicación (movil, web, ...)",
+        "title": "Tipo"
+      }
+    },
+    "simple": {
+      "description": "A hands-free application.<br/>Using this type, you will be able to define the client_id by your own.",
+      "title": "Simple"
+    },
+    "web": {
+      "description": "Java, .Net, ...",
+      "title": "Web"
+    }
+  },
+  "applications": {
+    "subscribers": {
+      "title": "See {count, plural, one{the subscription} other{subscriptions}} of the application {appName}"
+    },
+    "title": "Aplicaciones"
+  },
+  "catalog": {
+    "ALL": {
+      "emptyMessage": "El portal no contiene ninguna API."
+    },
+    "FEATURED": {
+      "emptyMessage": "No hay API destacada"
+    },
+    "STARRED": {
+      "emptyMessage": "Aún no hay notas"
+    },
+    "TRENDINGS": {
+      "emptyMessage": "Todavía no hay una API de tendencia"
+    },
+    "categories": {
+      "emptyMessage": "La categoría no contiene ninguna API"
+    },
+    "defaultCategory": "Todas las APIs",
+    "display": {
+      "cards": "Mostrar tarjetas",
+      "list": "Mostrar lista"
+    },
+    "filter": "Filtra los resultados",
+    "othersApi": {
+      "subTitle": "Descubre las diferentes API en los titulares de este mes",
+      "title": "Las otras APIs"
+    },
+    "search": "Buscar API"
+  },
+  "categories": {
+    "empty": "No hay categorías",
+    "title": "Categorías"
+  },
+  "common": {
+    "cancel": "Cancelar",
+    "date": {
+      "range": {
+        "title": "Seleccione un intervalo de tiempo"
+      }
+    },
+    "delete": "Eliminar",
+    "filters": {
+      "title": "Filtros"
+    },
+    "ok": "Validar",
+    "options": "Opciones",
+    "reset": "Reiniciar",
+    "save": "Guardar",
+    "search": "Buscar",
+    "status": {
+      "ACCEPTED": "Aceptado",
+      "CLOSED": "Cerrado",
+      "PAUSED": "Pausado",
+      "PENDING": "Esperando",
+      "REJECTED": "Rechazado"
+    },
+    "update": "Actualizar"
+  },
+  "cookies": {
+    "actions": {
+      "decline": "Rechazo",
+      "ok": "Entiendo"
+    },
+    "confirmation": "Si rechaza, sus datos de navegación no se recopilarán cuando visite este sitio web. Además de las cookies requeridas por el sitio web, solo se creará una cookie en su navegador para recordar su voluntad de no ser rastreado.",
+    "googleAnalyticsDescription": "Permitir cookies para Google Analytics",
+    "information": {
+      "common": "Este sitio web guarda cookies en su computadora. Estas cookies se utilizan para almacenar sus preferencias y su información de conexión. Nos permite mejorar su experiencia de navegación.",
+      "withAnalytics": "También se pueden recopilar análisis y métricas sobre los visitantes (usando <a href=\"https://policies.google.com/privacy\" target=\"_blank\"> Google Analytics </a>)."
+    },
+    "manage": "Puede administrar su preferencia de cookies aquí.",
+    "success": {
+      "disable": "Cookie {cookieName} deshabilitado",
+      "enable": "Cookie {cookieName} habilitado"
+    },
+    "title": "Configuraciones de cookies"
+  },
+  "dashboard": {
+    "applications": {
+      "create": "Crea una aplicación",
+      "createFirst": "Crear mi primera aplicación",
+      "list": "Ver tus aplicaciones",
+      "title": "Sus aplicaciones"
+    },
+    "empty": "Aún no tienes una aplicación",
+    "stats": {
+      "avg": "tiempo promedio de respuesta",
+      "max": "tiempo de respuesta máximo",
+      "min": "tiempo de respuesta mínimo",
+      "ms": "ms",
+      "rph": "solicitud por hora",
+      "rpm": "solicitud por minuto",
+      "rps": "solicitud por segundo",
+      "total": "total"
+    },
+    "subscriptions": {
+      "api": "API",
+      "application": "Aplicación",
+      "list": {
+        "empty": "Sin suscripciones"
+      },
+      "plan": "Plan",
+      "subtitle": "Seleccione una suscripción para ver la actividad de la semana pasada.",
+      "title": "Sus suscripciones"
+    },
+    "welcome": "Bienvenido {username},"
+  },
+  "errors": {
+    "clientRegistrationProvider": {
+      "exception": "Se produjo un error al conectarse al servicio de administración de acceso"
+    },
+    "email": {
+      "required": "Configure un correo electrónico para utilizar el formulario de contacto."
+    },
+    "forbidden": "No tiene suficientes derechos para acceder a este recurso",
+    "passwordFormat": {
+      "invalid": "La contraseña no es válida según las reglas de la política."
+    },
+    "plan": {
+      "notSubscribable": "Se requiere un client_id para suscribirse a un plan OAuth2 o JWT.",
+      "subscribed": "Ya hay una suscripción PENDIENTE o ACEPTADA para este plan."
+    },
+    "server": {
+      "unavailable": "Servidor no disponible o conexión perdida"
+    },
+    "support": {
+      "disabled": "El formulario de contacto no está disponible en este momento"
+    },
+    "unexpected": "Ocurrió un error inesperado",
+    "user": {
+      "exists": "Ya hay un usuario con el correo electrónico: {user}",
+      "finalized": "La cuenta ya ha sido finalizada."
+    }
+  },
+  "footer": {
+    "rights": "© Todos los derechos reservados 2020"
+  },
+  "gv-card-full": {
+    "empty": "No hay API para mostrar aquí",
+    "error": "Se produjo un error al cargar la API"
+  },
+  "gv-card": {
+    "empty": "No hay API para mostrar aquí",
+    "error": "Se produjo un error al cargar la API"
+  },
+  "gv-category-list": {
+    "error": "Se produjo un error al cargar la lista"
+  },
+  "gv-category": {
+    "empty": "No hay categoría para mostrar aquí",
+    "error": "Se produjo un error al cargar la categoría."
+  },
+  "gv-chart": {
+    "empty": "Ningún resultado para mostrar",
+    "error": "Se produjo un error al cargar los datos."
+  },
+  "gv-code": {
+    "copy": "Copiar al portapapeles"
+  },
+  "gv-confirm": {
+    "cancel": "Cancelar",
+    "ok": "Ok"
+  },
+  "gv-contact": {
+    "apis": {
+      "label": "Encuentra una API",
+      "title": "Asociar una API"
+    },
+    "applications": {
+      "label": "Encuentra una aplicación",
+      "title": "Asociar una aplicación"
+    },
+    "button": "Envía tu solicitud",
+    "content": {
+      "label": "Explique su solicitud ...",
+      "title": "TU PETICIÓN"
+    },
+    "receiveCopy": "Reciba una copia por correo electrónico",
+    "subject": {
+      "label": "Explica el tema ...",
+      "title": "Tema"
+    },
+    "success": "Su solicitud ha sido enviada al propietario.",
+    "title": "Tu solicitud"
+  },
+  "gv-create-application": {
+    "createApplication": "Crea una app"
+  },
+  "gv-date-picker": {
+    "endDate": "Fecha final",
+    "format": "MM/dd/yyyy",
+    "now": "Ahora",
+    "ok": "Ok",
+    "startDate": "Fecha de inicio",
+    "today": "Hoy"
+  },
+  "gv-documentation": {
+    "empty": "No hay documentación por el momento."
+  },
+  "gv-file-upload": {
+    "chooseAnotherFile": "elige otro archivo",
+    "chooseFile": "Escoge un archivo",
+    "error": {
+      "maxSize": "El tamaño del archivo excede el límite permitido",
+      "typeNotAllowed": "Este tipo de archivo no está permitido"
+    },
+    "orDragIt": "o déjalo aquí."
+  },
+  "gv-header": {
+    "empty": "No hay API para mostrar aquí",
+    "error": "Se produjo un error al cargar la API",
+    "subscribe": "Suscribir"
+  },
+  "gv-input": {
+    "copy": "Copiar al portapapeles",
+    "search": "Buscar"
+  },
+  "gv-list": {
+    "error": "Se produjo un error al cargar la lista",
+    "paused": "Pausado",
+    "pending": "Pendiente"
+  },
+  "gv-markdown-toc": {
+    "title": "Tabla de contenido"
+  },
+  "gv-metrics": {
+    "health": "Health",
+    "hits": "{count, plural, =0{Hit} one{Hit} other{Hits}} (last 7 days)",
+    "subscribers": "{count, plural, =0{Subscriber} one{Subscriber} other{Subscribers}}"
+  },
+  "gv-page": {
+    "swagger": {
+      "badFormat": "La página que está intentando ver no está en formato swagger / OpenAPI"
+    }
+  },
+  "gv-pagination": {
+    "next": "Siguiente",
+    "previous": "Previo"
+  },
+  "gv-plans": {
+    "characteristics": {
+      "empty": "No hay información sobre este plan."
+    },
+    "empty": {
+      "redirect": "Deseo contactar al propietario para obtener más información.",
+      "title": "La API no tiene un plan disponible en este momento."
+    },
+    "error": "Se produjo un error al cargar los planos.",
+    "security": {
+      "apiKey": "Clave personal",
+      "jwt": "Json Web Token",
+      "keyLess": "Key Less",
+      "oauth2": "Oauth 2"
+    },
+    "validation": {
+      "auto": "Validación automática",
+      "manual": "Validación manual"
+    }
+  },
+  "gv-promote": {
+    "empty": "No hay API para mostrar aquí",
+    "error": "Se produjo un error al cargar la API",
+    "view": "Ver API"
+  },
+  "gv-rating-list": {
+    "answerLabel": "Agrega una respuesta",
+    "cancel": "Cancelar",
+    "confirmAnswerDelete": "¿Estás seguro de eliminar la respuesta?",
+    "confirmRatingDelete": "¿Estás seguro de eliminar la calificación?",
+    "deleteAnswer": "Eliminar respuesta",
+    "deleteRating": "Eliminar calificación",
+    "reply": "Respuesta",
+    "send": "Enviar"
+  },
+  "gv-rating": {
+    "description-1": "La odio",
+    "description-2": "No me gusta",
+    "description-3": "Me gusta",
+    "description-4": "La amo",
+    "description-5": "Es perfecta",
+    "note": "Nota",
+    "notes": "Calificaciones"
+  },
+  "gv-row": {
+    "empty": "No result to display",
+    "error": "An error occurred while loading the API"
+  },
+  "gv-stats": {
+    "empty": "No result to display",
+    "error": "An error occurred while loading data"
+  },
+  "gv-stepper": {
+    "error": "An error occurred while loading the steps"
+  },
+  "gv-table": {
+    "accepted": "Accepted",
+    "empty": "No result to display",
+    "error": "An error occurred while loading data",
+    "paused": "Paused",
+    "pending": "Pending",
+    "rejected": "Rejected"
+  },
+  "homepage": {
+    "apis": "APIs destacadas",
+    "explore": "Buscar APIs",
+    "signup": "Registrarse",
+    "title": "Portal de Desarrolladores del Banco del Bienestar."
+  },
+  "login": {
+    "button": "Ingresar",
+    "notification": {
+      "error": "Usuario o Contraseña invalidos"
+    },
+    "password": "Contraseña",
+    "resetPassword": "Cambiar contraseña",
+    "signup": {
+      "link": "Registrarse",
+      "text": "¿Aun no tienes un usuario?"
+    },
+    "title": "¿Quien eres?",
+    "username": "Usuario"
+  },
+  "notFound": {
+    "goHome": "Ir al Inicio",
+    "message": "La pagina que estas buscando no existe. No te preocupes, nada esta perdido aun",
+    "title": "Pagina no encontrada"
+  },
+  "registration": {
+    "backHome": "Regresar al Portal",
+    "backLogin": "Regresar a Inicio de Sesion",
+    "button": "Registrarse",
+    "email": "Correo electronico",
+    "firstname": "Nombre",
+    "lastname": "Apellido",
+    "success": {
+      "message": "Un email fue enviado al correo electronico: {email}",
+      "title": "Registro confirmado"
+    },
+    "title": "Crear una cuenta"
+  },
+  "registrationConfirmation": {
+    "backHome": "Volver al portal",
+    "backLogin": "Volver a Iniciar sesión",
+    "backRegistration": "Regresar al registro",
+    "button": "Confirmar",
+    "confirmedPassword": "Confirmar la contraseña",
+    "email": "Email",
+    "firstname": "Nombre",
+    "lastname": "Apellido",
+    "password": "Elige una contraseña",
+    "success": {
+      "message": "La creación de su cuenta ha sido confirmada",
+      "title": "Registro exitoso"
+    },
+    "title": "Confirmar el registro",
+    "tokenExpired": "Su solicitud de creación de cuenta ha caducado"
+  },
+  "resetPassword": {
+    "backHome": "Volver al portal",
+    "backLogin": "Volver a Iniciar sesión",
+    "button": "Restablecer su contraseña",
+    "success": {
+      "message": "Si la cuenta existe, se enviará un correo electrónico.",
+      "title": "Restablecimiento de contraseña confirmado!"
+    },
+    "title": "Restablecer su contraseña",
+    "username": "Nombre de usuario"
+  },
+  "resetPasswordConfirmation": {
+    "backHome": "Volver al portal",
+    "backLogin": "Volver a Iniciar sesión",
+    "backResetPassword": "Volver a restablecer contraseña",
+    "button": "Confirmar",
+    "confirmedPassword": "Confirmar la contraseña",
+    "email": "Email",
+    "firstname": "Nombre",
+    "lastname": "Apellido",
+    "password": "Elige una contraseña",
+    "success": {
+      "message": "Su contraseña ha sido modificada",
+      "title": "Reinicio exitoso"
+    },
+    "title": "Elige una contraseña",
+    "tokenExpired": "Su solicitud de restablecimiento de contraseña ha caducado"
+  },
+  "route": {
+    "analyticsApplication": "Analitica",
+    "applicationCreation": "Crear una aplicacion",
+    "applications": "Aplicaciones",
+    "catalog": "Catalogo",
+    "catalogAll": "Todas las APIs",
+    "catalogApi": "Informacion general",
+    "catalogApiContact": "Contacto",
+    "catalogApiDocumentation": "Documentacion",
+    "catalogApiSubscribe": "Suscripcion",
+    "catalogCategories": "Categorias",
+    "catalogCategory": "Categoria",
+    "catalogFeatured": "Destacada",
+    "catalogStarred": "Calificada",
+    "catalogTrending": "Tendencia",
+    "contact": "Contacto",
+    "cookies": "Propiedades de Cookies",
+    "dashboard": "Tablero",
+    "homepage": "Pagina Principal",
+    "login": "Ingresar",
+    "logout": "Salir",
+    "logsApplication": "Historial",
+    "management": "Administration",
+    "members": "Miembros",
+    "myApplications": "Mis aplicaciones",
+    "mySubscriptions": "Mis suscripciones",
+    "notFound": "Pagina no encontrada",
+    "notifications": "Notificaciones",
+    "subscriptions": "Suscriptiones",
+    "user": "Mi cuenta"
+  },
+  "search": {
+    "results": {
+      "label": "{count, plural, =0{No result} one{{count} result} other{{count} results}}"
+    }
+  },
+  "site": {
+    "title": "Banco del Bienestar"
+  },
+  "subscriptions": {
+    "applications": {
+      "init": "No tienes ninguna aplicación",
+      "name": "Nombre",
+      "navigate": "Ir a la aplicación",
+      "owner": "Propietario",
+      "title": "Aplicaciones"
+    },
+    "subscriptions": {
+      "api": "API",
+      "empty": "No hay suscripciones para esta aplicación.",
+      "end_date": "Fecha final",
+      "init": "Pase a una aplicación para ver sus suscripciones",
+      "navigate": "Ir a la suscripción",
+      "plan": "Plan",
+      "start_date": "Fecha de debut",
+      "title": "Suscripciones"
+    },
+    "title": "Mis Suscripciones"
+  },
+  "user": {
+    "account": {
+      "success": "Tu cuenta ha sido actualizada exitosamente",
+      "title": "Informaciones personales"
+    },
+    "change_picture": "Cambiar foto",
+    "display_name": "Nombre:",
+    "email": "Correo electronico:",
+    "notifications": {
+      "empty": "No se han recibido notificaciones",
+      "read": "Leidas",
+      "title": "Notificaciones"
+    }
+  }
+}
