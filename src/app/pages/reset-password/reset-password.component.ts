@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-import { UsersService, ResetUserPasswordInput } from '@gravitee/ng-portal-webclient';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { ResetUserPasswordInput, UsersService } from 'projects/portal-webclient-sdk/src/lib';
 import { ReCaptchaService } from '../../services/recaptcha.service';
 
 @Component({
@@ -49,7 +49,7 @@ export class ResetPasswordComponent implements OnInit {
         reset_page_url: window.location.href + '/confirm'
       };
       this.reCaptchaService.execute('reset_password').then(() => {
-        this.usersService.resetUserPassword({ ResetUserPasswordInput: input })
+        this.usersService.resetUserPassword({ resetUserPasswordInput: input })
           .toPromise()
           .then(() => this.isSubmitted = true)
           .catch(() => {});

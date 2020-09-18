@@ -175,6 +175,38 @@
           }
         }
       }
+    },
+    "portal-webclient-sdk": {
+      "projectType": "library",
+      "root": "projects/portal-webclient-sdk",
+      "sourceRoot": "projects/portal-webclient-sdk/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/portal-webclient-sdk/tsconfig.lib.json",
+            "project": "projects/portal-webclient-sdk/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/portal-webclient-sdk/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/portal-webclient-sdk/tsconfig.lib.json",
+              "projects/portal-webclient-sdk/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "gravitee-portal-webui"

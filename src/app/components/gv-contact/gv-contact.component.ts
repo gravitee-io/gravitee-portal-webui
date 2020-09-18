@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 import { Component, Input, OnInit } from '@angular/core';
-import { ApiService, ApplicationService, PortalService } from '@gravitee/ng-portal-webclient';
+import { ApiService, ApplicationService, PortalService } from 'projects/portal-webclient-sdk/src/lib';
 import { NotificationService } from '../../services/notification.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { CurrentUserService } from '../../services/current-user.service';
@@ -91,7 +91,7 @@ export class GvContactComponent implements OnInit {
 
   submit() {
     this.isSending = true;
-    this.portalService.createTicket({ TicketInput: this.contactForm.value }).toPromise().then(() => {
+    this.portalService.createTicket({ ticketInput: this.contactForm.value }).toPromise().then(() => {
       this.notificationService.success(i18n('gv-contact.success'));
       this.reset();
     }).finally(() => this.isSending = false);

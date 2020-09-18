@@ -20,14 +20,14 @@ import '@gravitee/ui-components/wc/gv-nav';
 import '@gravitee/ui-components/wc/gv-user-menu';
 import '@gravitee/ui-components/wc/gv-theme';
 import {
-  AfterViewInit,
-  ChangeDetectorRef,
-  Component,
-  ComponentFactoryResolver,
-  HostListener,
-  OnDestroy,
-  OnInit,
-  ViewChild,
+    AfterViewInit,
+    ChangeDetectorRef,
+    Component,
+    ComponentFactoryResolver,
+    HostListener,
+    OnDestroy,
+    OnInit,
+    ViewChild,
 } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { Title } from '@angular/platform-browser';
@@ -36,17 +36,18 @@ import { UserNotificationComponent } from './pages/user/user-notification/user-n
 import { CurrentUserService } from './services/current-user.service';
 import { NotificationService } from './services/notification.service';
 import {
-  ActivatedRoute,
-  NavigationEnd,
-  NavigationStart, PRIMARY_OUTLET,
-  Router,
-  RouterOutlet,
-  UrlSegmentGroup,
-  UrlTree
+    ActivatedRoute,
+    NavigationEnd,
+    NavigationStart,
+    PRIMARY_OUTLET,
+    Router,
+    RouterOutlet,
+    UrlSegmentGroup,
+    UrlTree
 } from '@angular/router';
 import { INavRoute, NavRouteService } from './services/nav-route.service';
 import { animation } from './route-animation';
-import { Link, PortalService, User, UserService } from '@gravitee/ng-portal-webclient';
+import { Link, PortalService, User, UserService } from 'projects/portal-webclient-sdk/src/lib';
 import { Notification } from './model/notification';
 import { GvMenuTopSlotDirective } from './directives/gv-menu-top-slot.directive';
 import { GvMenuRightTransitionSlotDirective } from './directives/gv-menu-right-transition-slot.directive';

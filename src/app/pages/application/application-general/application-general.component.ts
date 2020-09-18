@@ -26,7 +26,7 @@ import {
   ApplicationType,
   PermissionsResponse,
   Subscription
-} from '@gravitee/ng-portal-webclient';
+} from 'projects/portal-webclient-sdk/src/lib';
 import { ActivatedRoute, Router } from '@angular/router';
 import { marker as i18n } from '@biesbjerg/ngx-translate-extract-marker';
 import { TranslateService } from '@ngx-translate/core';
@@ -215,7 +215,7 @@ export class ApplicationGeneralComponent implements OnInit, OnDestroy {
   submit() {
     this.isSaving = true;
     this.applicationService.updateApplicationByApplicationId(
-      { applicationId: this.application.id, Application: this.applicationForm.getRawValue() }).toPromise().then((application) => {
+      { applicationId: this.application.id, application: this.applicationForm.getRawValue() }).toPromise().then((application) => {
       this.application = application;
       this.reset();
       this.notificationService.success(i18n('application.success.save'));

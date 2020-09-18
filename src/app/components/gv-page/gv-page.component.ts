@@ -14,17 +14,17 @@
  * limitations under the License.
  */
 import {
-  Component,
-  ViewChild,
-  ComponentFactoryResolver,
-  Input,
-  OnChanges,
-  SimpleChanges,
-  OnDestroy,
-  Output,
-  EventEmitter
+    Component,
+    ComponentFactoryResolver,
+    EventEmitter,
+    Input,
+    OnChanges,
+    OnDestroy,
+    Output,
+    SimpleChanges,
+    ViewChild
 } from '@angular/core';
-import { Page, PageConfiguration, PortalService, ApiService } from '@gravitee/ng-portal-webclient';
+import { ApiService, Page, PageConfiguration, PortalService } from 'projects/portal-webclient-sdk/src/lib';
 import { GvPageContentSlotDirective } from 'src/app/directives/gv-page-content-slot.directive';
 import { ActivatedRoute } from '@angular/router';
 import { PageService } from 'src/app/services/page.service';

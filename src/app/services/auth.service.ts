@@ -19,7 +19,7 @@ import { CurrentUserService } from './current-user.service';
 import { NotificationService } from './notification.service';
 import { ConfigurationService } from './configuration.service';
 import { marker as i18n } from '@biesbjerg/ngx-translate-extract-marker';
-import { AuthenticationService, PortalService } from '@gravitee/ng-portal-webclient';
+import { AuthenticationService, PortalService } from 'projects/portal-webclient-sdk/src/lib';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -58,7 +58,7 @@ export class AuthService {
   login(username: string, password: string, redirectUrl: string = ''): Promise<boolean> {
     return new Promise((resolve) => {
       const authorization: string = 'Basic ' + btoa(`${username}:${password}`);
-      return this.authenticationService.login({ Authorization: authorization }).subscribe(
+      return this.authenticationService.login({ authorization }).subscribe(
         () => {
           this.currentUserService.load().then(() => {
             this.router.navigate([redirectUrl]);

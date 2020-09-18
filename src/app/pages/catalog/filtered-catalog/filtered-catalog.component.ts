@@ -22,7 +22,7 @@ import {
   FilterApiQuery,
   Page,
   PortalService
-} from '@gravitee/ng-portal-webclient';
+} from 'projects/portal-webclient-sdk/src/lib';
 import '@gravitee/ui-components/wc/gv-promote';
 import '@gravitee/ui-components/wc/gv-card-list';
 import '@gravitee/ui-components/wc/gv-card-full';
@@ -156,7 +156,7 @@ export class FilteredCatalogComponent implements OnInit {
     const { list, deferredList } = createPromiseList(FilteredCatalogComponent.RANDOM_MAX_SIZE);
     this.randomList = list;
 
-    return this.apiService.getApis({ size: FilteredCatalogComponent.RANDOM_MAX_SIZE, _filter: this.filterApiQuery })
+    return this.apiService.getApis({ size: FilteredCatalogComponent.RANDOM_MAX_SIZE, filter: this.filterApiQuery })
       .toPromise()
       .then((apiResponse) => {
         apiResponse.data.forEach((a, index) => {

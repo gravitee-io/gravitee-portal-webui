@@ -17,7 +17,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "portal-webclient-sdk": [
+        "dist/portal-webclient-sdk/portal-webclient-sdk",
+        "dist/portal-webclient-sdk"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

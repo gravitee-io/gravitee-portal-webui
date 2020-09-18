@@ -24,19 +24,20 @@ import {
   ApiService,
   Application,
   ApplicationService,
+  Page,
+  Plan,
   Subscription,
   SubscriptionService,
-} from '@gravitee/ng-portal-webclient';
+} from 'projects/portal-webclient-sdk/src/lib';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Plan, Page } from '@gravitee/ng-portal-webclient';
-import StatusEnum = Subscription.StatusEnum;
 import { distinctUntilChanged } from 'rxjs/operators';
 import { ConfigurationService } from '../../../services/configuration.service';
 import { ItemResourceTypeEnum } from 'src/app/model/itemResourceType.enum';
 import { FeatureEnum } from 'src/app/model/feature.enum';
-import { getPictureDisplayName, getPicture } from '@gravitee/ui-components/src/lib/item';
+import { getPicture, getPictureDisplayName } from '@gravitee/ui-components/src/lib/item';
+import StatusEnum = Subscription.StatusEnum;
 
 @Component({
   selector: 'app-api-subscribe',
@@ -337,7 +338,7 @@ export class ApiSubscribeComponent implements OnInit {
       try {
         this.showValidateLoader = true;
         let subscription = await this.subscriptionService.createSubscription({
-          SubscriptionInput: this.subscribeForm.value
+          subscriptionInput: this.subscribeForm.value
         }).toPromise();
 
         if (this.hasAutoValidation()) {

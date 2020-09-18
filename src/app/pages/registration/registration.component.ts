@@ -15,8 +15,7 @@
  */
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { RegisterUserInput, UsersService, CustomUserFields } from '@gravitee/ng-portal-webclient';
-import { marker as i18n } from '@biesbjerg/ngx-translate-extract-marker';
+import { CustomUserFields, RegisterUserInput, UsersService } from 'projects/portal-webclient-sdk/src/lib';
 import { ReCaptchaService } from '../../services/recaptcha.service';
 
 @Component({
@@ -88,7 +87,7 @@ export class RegistrationComponent implements OnInit {
       }
 
       this.reCaptchaService.execute('registration').then(() => {
-        this.usersService.registerNewUser({ RegisterUserInput: input })
+        this.usersService.registerNewUser({ registerUserInput: input })
           .toPromise()
           .then(() => this.isSubmitted = true)
           .catch(() => {});

@@ -13,13 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { ChangeDetectorRef, Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators
-} from '@angular/forms';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import '@gravitee/ui-components/wc/gv-stepper';
 import '@gravitee/ui-components/wc/gv-option';
 import '@gravitee/ui-components/wc/gv-switch';
@@ -31,13 +26,15 @@ import { ConfigurationService } from '../../../services/configuration.service';
 
 import { getApplicationTypeIcon } from '@gravitee/ui-components/src/lib/theme';
 import {
-  ApiService, Application,
+  ApiService,
+  Application,
   ApplicationInput,
   ApplicationService,
   ApplicationType,
   Plan,
-  PortalService, SubscriptionService
-} from '@gravitee/ng-portal-webclient';
+  PortalService,
+  SubscriptionService
+} from 'projects/portal-webclient-sdk/src/lib';
 import { NotificationService } from '../../../services/notification.service';
 
 export interface ApplicationTypeOption extends ApplicationType {
@@ -101,20 +98,22 @@ export class ApplicationCreationComponent implements OnInit {
       i18n('applicationCreation.step.validate')
     ].map((_title) => this.translateService.get(_title).toPromise().then((title) => ({ title }))));
     this.steps = this._allSteps;
+
     this.allowedTypes = await Promise.all(this.route.snapshot.data.enabledApplicationTypes
-      .map((type, index) => {
+      .map((type: ApplicationType, index) => {
         return this.translateService.get([`applicationType.${type.id}.title`, `applicationType.${type.id}.description`])
           .toPromise()
           .then((translations) => {
             const [title, description] = Object.values(translations);
-            return {
+            const result: ApplicationTypeOption = {
               ...type,
               icon: getApplicationTypeIcon(type.id),
               title,
               description,
             };
+            return result;
           });
-      }));
+      }) as PromiseLike<ApplicationTypeOption>[]);
 
     this.applicationForm = this.formBuilder.group({
       name: new FormControl(null, [Validators.required]),
@@ -289,7 +288,7 @@ export class ApplicationCreationComponent implements OnInit {
     this.creationInProgress = true;
     const applicationInput = this.applicationForm.getRawValue() as ApplicationInput;
 
-    this.applicationService.createApplication({ ApplicationInput: applicationInput })
+    this.applicationService.createApplication({ applicationInput })
       .toPromise()
       .then((application) => {
         this.createdApplication = application;
@@ -306,7 +305,7 @@ export class ApplicationCreationComponent implements OnInit {
           }
 
           return this.subscriptionService.createSubscription({
-            SubscriptionInput: subscriptionInput
+            subscriptionInput
           }).toPromise();
         });
 
