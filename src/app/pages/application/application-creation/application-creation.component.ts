@@ -44,9 +44,9 @@ export interface ApplicationTypeOption extends ApplicationType {
 }
 
 interface StepState {
-  description: string,
-  valid: boolean,
-  invalid: boolean
+  description: string;
+  valid: boolean;
+  invalid: boolean;
 }
 
 @Component({

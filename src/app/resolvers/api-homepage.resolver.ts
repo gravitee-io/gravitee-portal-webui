@@ -28,9 +28,9 @@ export class ApiHomepageResolver implements Resolve<Page> {
     const apiId = route.params.apiId;
     return this.apiService.getPagesByApiId({ apiId, homepage: true })
       .toPromise()
-      .then((response)=>{
-      return response.data[0]
-    })
+      .then((response) => {
+      return response.data[0];
+    });
   }
 
 }

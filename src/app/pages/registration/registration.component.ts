@@ -65,7 +65,7 @@ export class RegistrationComponent implements OnInit {
       this.registrationForm = this.formBuilder.group(formDescriptor);
     }).finally(() => {
       this.canDisplayForm = true;
-     })
+     });
 
     this.reCaptchaService.displayBadge();
   }

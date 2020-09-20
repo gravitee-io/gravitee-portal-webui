@@ -47,7 +47,7 @@ export class ResetPasswordConfirmationComponent implements OnInit {
     this.isSubmitted = false;
     this.token = this.route.snapshot.paramMap.get('token');
     this.userFromToken = this.tokenService.parseToken(this.token);
-    this.isTokenExpired = this.tokenService.isParsedTokenExpired(this.userFromToken)
+    this.isTokenExpired = this.tokenService.isParsedTokenExpired(this.userFromToken);
 
     this.resetPasswordConfirmationForm = this.formBuilder.group({
       firstname: new FormControl({ value: this.userFromToken.firstname, disabled: true }),

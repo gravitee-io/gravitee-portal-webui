@@ -217,7 +217,7 @@ export class ApplicationMembersComponent implements OnInit {
   }
 
   async isReadOnly(init?: boolean) {
-    let permissions : PermissionsResponse;
+    let permissions: PermissionsResponse;
     if (init) {
       permissions = this.route.snapshot.data.permissions;
     } else {

@@ -146,7 +146,7 @@ export class ApiSubscribeComponent implements OnInit {
 
         });
 
-        this.subscribeForm.valueChanges
+      this.subscribeForm.valueChanges
         .pipe(distinctUntilChanged((prev, curr) => prev.general_conditions_accepted === curr.general_conditions_accepted))
         .subscribe(() => {
           if (this.subscribeForm.get('general_conditions_accepted').value === true) {
@@ -210,7 +210,7 @@ export class ApiSubscribeComponent implements OnInit {
           if (this.generalConditions.get(this._currentPlan.general_conditions) === undefined) {
             this.apiService.getPageByApiIdAndPageId({
               apiId: this.apiId,
-              pageId:this._currentPlan.general_conditions,
+              pageId: this._currentPlan.general_conditions,
               include: ['content'] }).toPromise()
             .then((p) => {
               this.generalConditions.set(p.id, p);
@@ -280,7 +280,7 @@ export class ApiSubscribeComponent implements OnInit {
   }
 
   hasAcceptedGeneralCondition() {
-    return !this.planHasGeneralConditions() || (this.subscribeForm.value.general_conditions_accepted === true)
+    return !this.planHasGeneralConditions() || (this.subscribeForm.value.general_conditions_accepted === true);
   }
 
   hasStepper() {
@@ -413,7 +413,7 @@ export class ApiSubscribeComponent implements OnInit {
   }
 
   displayGeneralConditions() {
-    return !(this.hasSubscriptionAccepted() || this.hasSubscriptionPending() || this.hasSubscriptionRejected())
+    return !(this.hasSubscriptionAccepted() || this.hasSubscriptionPending() || this.hasSubscriptionRejected());
   }
 
   getSubscriptionKey() {

@@ -97,14 +97,14 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
 
   login() {
     if (this.isFormValid()) {
-      this.reCaptchaService.execute('login').then(() =>{
+      this.reCaptchaService.execute('login').then(() => {
         this.authService.login(this.loginForm.value.username, this.loginForm.value.password, this.redirectUrl).then(
           () => {
           },
           () => {
             this.loginForm.setValue({ username: this.loginForm.value.username, password: '' });
           }
-        )});
+        ); });
     }
   }
 
@@ -118,7 +118,7 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
 
   getProviderStyle(provider) {
     if (provider.color) {
-    return `--gv-button-${provider.type}--bgc:${provider.color};`
+    return `--gv-button-${provider.type}--bgc:${provider.color};`;
     }
     return '';
   }

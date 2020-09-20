@@ -122,6 +122,6 @@ export class GoogleAnalyticsService {
   private _removeGACookies() {
     this.cookieService.delete('_ga');
     this.cookieService.delete('_gid');
-    this.cookieService.delete('_gat_gtag_' + this.trackingId.replace(/-/g,'_'));
+    this.cookieService.delete('_gat_gtag_' + this.trackingId.replace(/-/g, '_'));
   }
 }

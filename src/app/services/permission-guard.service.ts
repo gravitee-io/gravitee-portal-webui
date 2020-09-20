@@ -55,7 +55,7 @@ export class PermissionGuardService implements CanActivate {
       if (!applicationRights.includes(r)) {
         includesAll = false;
       }
-    })
+    });
     return includesAll;
   }
 }

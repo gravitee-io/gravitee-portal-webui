@@ -62,7 +62,6 @@ import { ApplicationsComponent } from './applications.component';
     ApplicationLogsComponent,
     GvSelectDashboardComponent,
   ],
-  entryComponents: [GvButtonCreateApplicationComponent, GvSelectDashboardComponent],
   imports: [
     ApplicationsRoutingModule,
     CommonModule,

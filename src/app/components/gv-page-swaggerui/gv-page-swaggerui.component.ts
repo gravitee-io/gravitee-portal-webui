@@ -82,7 +82,7 @@ export class GvPageSwaggerUIComponent implements OnInit {
   _tryItEnabled(page: Page) {
     return page.configuration && page.configuration.try_it &&
       (this.currentUser || page.configuration.try_it_anonymous);
-  };
+  }
 
   _prepareConfig(page: Page) {
     const customPlugins = [];

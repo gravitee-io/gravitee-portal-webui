@@ -41,7 +41,7 @@ export class GvValidators {
       }
     }
     return error;
-  };
+  }
 
 
   static oneRequired(field: AbstractControl): ValidatorFn {

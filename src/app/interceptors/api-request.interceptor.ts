@@ -105,7 +105,7 @@ export class ApiRequestInterceptor implements HttpInterceptor {
 
     const xsrfTokenHeader = response.headers.get('X-Xsrf-Token');
 
-    if(xsrfTokenHeader !== null) {
+    if (xsrfTokenHeader !== null) {
       this.xsrfToken = xsrfTokenHeader;
     }
   }

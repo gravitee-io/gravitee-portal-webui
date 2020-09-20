@@ -30,7 +30,7 @@ export class PreviewService {
 
   isActive(): boolean {
     const state = this.previewSource.getValue();
-    if(state === true){
+    if (state === true){
       this.notificationService.info('On preview mode');
     }
     return state;

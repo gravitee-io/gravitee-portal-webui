@@ -102,7 +102,6 @@ import { ReCaptchaService } from './services/recaptcha.service';
     UserContactComponent,
     UserNotificationComponent,
   ],
-  entryComponents: [GvSearchApiComponent, GvHeaderItemComponent],
   imports: [
     AppRoutingModule,
     BrowserAnimationsModule,

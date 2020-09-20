@@ -146,8 +146,8 @@ export class UserAccountComponent implements OnInit, OnDestroy {
       userInput[avatarProp] = this.userForm.get(avatarProp).value;
     }
 
-    if (this.customUserFields && this.customUserFields.length >0 ) {
-      const customFields : any = {}
+    if (this.customUserFields && this.customUserFields.length > 0 ) {
+      const customFields: any = {};
       this.customUserFields.forEach((field) => {
         customFields[field.key] = this.userForm.get(field.key).value;
       });

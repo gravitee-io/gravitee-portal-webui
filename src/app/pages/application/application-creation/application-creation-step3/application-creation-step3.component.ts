@@ -90,7 +90,7 @@ export class ApplicationCreationStep3Component implements OnInit {
 
           this.apiService.getPageByApiIdAndPageId({
             apiId: _api,
-            pageId:this.selectedPlan.general_conditions,
+            pageId: this.selectedPlan.general_conditions,
             include: ['content'] }).toPromise()
           .then((page) => {
             this.generalConditions.set(page.id, page);
@@ -183,7 +183,7 @@ export class ApplicationCreationStep3Component implements OnInit {
   }
 
   goToStep2() {
-    this.changeStep.emit({ step: 2 , fragment: 'appClientId' })
+    this.changeStep.emit({ step: 2 , fragment: 'appClientId' });
   }
 
   onRequestChange($event: any) {

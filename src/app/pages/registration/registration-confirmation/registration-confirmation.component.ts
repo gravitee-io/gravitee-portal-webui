@@ -67,7 +67,7 @@ export class RegistrationConfirmationComponent implements OnInit {
       const input: FinalizeRegistrationInput = {
         token: this.token,
         password: this.registrationConfirmationForm.value.password,
-        firstname:this.userFromToken.firstname,
+        firstname: this.userFromToken.firstname,
         lastname: this.userFromToken.lastname
       };
       this.reCaptchaService.execute('registration_confirmation').then(() => {

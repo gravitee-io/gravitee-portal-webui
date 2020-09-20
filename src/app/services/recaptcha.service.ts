@@ -45,7 +45,7 @@ export class ReCaptchaService {
   }
 
   load(): Promise<any> {
-    const self = this
+    const self = this;
     this.enabled = this.configurationService.get('recaptcha.enabled');
     this.siteKey = this.configurationService.get('recaptcha.siteKey');
 

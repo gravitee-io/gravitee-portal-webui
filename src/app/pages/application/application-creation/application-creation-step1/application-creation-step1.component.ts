@@ -40,7 +40,7 @@ export class ApplicationCreationStep1Component implements OnInit {
     this.form.valueChanges.subscribe(() => {
       this.updated.emit(this.form);
     });
-    setTimeout(()=>{
+    setTimeout(() => {
       this.updated.emit(this.form);
     });
   }

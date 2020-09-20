@@ -26,7 +26,7 @@ export class ApiInformationsResolver implements Resolve<Array<ApiInformation>> {
 
   resolve(route: ActivatedRouteSnapshot) {
     const apiId = route.params.apiId;
-    return this.portalService.getApiInformations({ apiId })
+    return this.portalService.getApiInformations({ apiId });
   }
 
 }
