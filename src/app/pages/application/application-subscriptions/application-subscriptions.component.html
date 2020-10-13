@@ -72,11 +72,41 @@
             {{ selectedSubscription.start_at | localizedDate }}
           </div>
       </div>
-      <div class="page__box-footer form__actions">
+      <form [formGroup]="apiKeyForm">
+        <div class="page__box-footer form__actions">
+        <gv-input *ngIf="canRenew(selectedSubscription) && canUseCustomApiKey()"
+          formControlName="apiKey"
+          name="apiKey"
+          no-submit
+          [required]="false"
+          [label]="'You can provide a custom API key for this subsciption'"
+          [valid]="isCustomApiKeyValid && apiKeyForm.controls.apiKey.valid"
+          [invalid]="isCustomApiKeyInvalid"
+          (keyup)="verifyApiKeyAvailability($event)"
+          type="text"
+          placeholder="Custom API key"
+          [icon]="isCustomApiKeyValid ? 'code:done' : isCustomApiKeyInvalid ? 'code:error' : ''"
+          ngDefaultControl
+        ></gv-input>
+          <div *ngIf="(apiKeyForm.controls.apiKey.invalid || isCustomApiKeyInvalid) && (apiKeyForm.controls.apiKey.dirty || apiKeyForm.controls.apiKey.touched)"
+               class="validation-error">
+            <div *ngIf="apiKeyForm.controls.apiKey?.errors?.minlength" >
+              {{'application.subscriptions.customApiKey.validation.minLength' | translate : { minLength: '10'} }}
+            </div>
+            <div *ngIf="apiKeyForm.controls.apiKey?.errors?.maxlength">
+              {{'application.subscriptions.customApiKey.validation.maxLength' | translate : { maxLength: '64'} }}
+            </div>
+            <div *ngIf="isCustomApiKeyInvalid">
+              {{'application.subscriptions.customApiKey.validation.alreadyExist' | translate }}
+            </div>
+            <div *ngIf="apiKeyForm.controls.apiKey?.errors?.pattern">
+              {{'application.subscriptions.customApiKey.validation.pattern' | translate}}
+            </div>
+          </div>
         <gv-confirm *ngIf="canRenew(selectedSubscription)"
                     [message]="'application.subscriptions.renew.message' | translate"
                     (:gv-confirm:ok)="renewSubscription(selectedSubscription.id)">
-          <gv-button primary>{{ 'application.subscriptions.renew.title' | translate }}</gv-button>
+          <gv-button primary [disabled]="apiKeyForm.controls.apiKey.invalid">{{ 'application.subscriptions.renew.title' | translate }}</gv-button>
         </gv-confirm>
         <gv-confirm *ngIf="canRevoke(selectedSubscription)"
                     [message]="'application.subscriptions.close.message' | translate"
@@ -85,6 +115,7 @@
           <gv-button link>{{ 'application.subscriptions.close.title' | translate }}</gv-button>
         </gv-confirm>
       </div>
+      </form>
     </div>
     <div class="page__box" *ngIf="getValidApiKeys(selectedSubscription)">
       <div class="page__box-title">

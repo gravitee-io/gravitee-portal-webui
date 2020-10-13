@@ -89,11 +89,11 @@
       "congratulations": "Bravo !",
       "discoverApi": "Commencez à découvrir l'API",
       "goToHome": "Retour à l'accueil",
+      "oauth2": "Vous devez récupèrer un access_token auprès du serveur d'autorisation avant de pouvoir consommer cette API.",
       "subscriptionAccepted": "La souscription de l'application <b>{appName}</b> au plan <b>{planName}</b> de l'API <b>{apiName}</b> est acceptée!",
       "subscriptionKey": "Voici votre clé personnelle pour accèder à l'API",
       "subscriptionPending": "La souscription de l'application <b>{appName}</b> au plan <b>{planName}</b> de l'API <b>{apiName}</b> est en cours de validation.",
-      "subscriptionRejected": "La souscription de l'application <b>{appName}</b> au plan <b>{planName}</b> de l'API <b>{apiName}</b> est rejetée.",
-      "oauth2": "Vous devez récupèrer un access_token auprès du serveur d'autorisation avant de pouvoir consommer cette API."
+      "subscriptionRejected": "La souscription de l'application <b>{appName}</b> au plan <b>{planName}</b> de l'API <b>{apiName}</b> est rejetée."
     },
     "validate": {
       "askConfirmation": "La souscription de l'application <b>{appName}</b> au plan <b>{planName}</b> de l'API <b>{apiName}</b> est sur le point d'être finalisée.",
@@ -255,9 +255,6 @@
       }
     },
     "metadata": {
-      "add": {
-        "success": "La metadata \"{key}\" a été ajoutée"
-      },
       "format": "Format",
       "key": "Clé",
       "list": {
@@ -265,8 +262,6 @@
           "title": "Ajouter"
         },
         "remove": {
-          "message": "Êtes-vous sûr de vouloir supprimer cette metadata ?",
-          "success": "La metadata \"{key}\" a été supprimée",
           "title": "Supprimer"
         },
         "title": "Liste des metadata"
@@ -357,6 +352,14 @@
         "title": "Clôturer"
       },
       "created_at": "Date de souscription",
+      "customApiKey": {
+        "validation": {
+          "alreadyExist": "Cette API key existe déjà",
+          "maxLength": "Maximum {maxLength} caractères",
+          "minLength": "Minimum {minLength} caractères",
+          "pattern": "Cette API key contient des caractères interdits"
+        }
+      },
       "filters": {
         "api": {
           "label": "Sélectionner une API",
@@ -654,11 +657,10 @@
       "general_conditions_accept": "Le plan {plan} requiert l'acceptation des conditions générales.",
       "general_conditions_status": "Le plan {plan} référence une page de conditions générales non publiée.",
       "notSubscribable": "Un client_id est requis pour s'abonner à un plan OAuth2 ou JWT.",
-      "otherOAuth2OrJWTSubscribed": "Un autre plan de type OAuth2 ou JWT a déjà été souscrit par cette application.",
       "subscribed": "Il existe déjà un abonnement EN ATTENTE ou ACCEPTÉ pour ce plan."
     },
     "server": {
-      "unavailable": "Serveur indisponible ou connection perdu"
+      "unavailable": "Serveur indisponible ou connection perdue"
     },
     "support": {
       "disabled": "Le formulaire de contact n'est pas disponible pour le moment"

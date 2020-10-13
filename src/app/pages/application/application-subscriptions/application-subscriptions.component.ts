@@ -17,15 +17,16 @@ import { ChangeDetectorRef, Component, OnInit, NgZone } from '@angular/core';
 import '@gravitee/ui-components/wc/gv-list';
 import '@gravitee/ui-components/wc/gv-rating-list';
 import '@gravitee/ui-components/wc/gv-confirm';
+import '@gravitee/ui-components/wc/gv-input';
 import {
   ApiService,
   SubscriptionService,
-  Subscription, GetSubscriptionsRequestParams, ApplicationService, PermissionsService
+  Subscription, GetSubscriptionsRequestParams, ApplicationService, PermissionsService, KeysService
 } from '@gravitee/ng-portal-webclient';
 import { ActivatedRoute, Router } from '@angular/router';
 import { marker as i18n } from '@biesbjerg/ngx-translate-extract-marker';
 import { TranslateService } from '@ngx-translate/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import StatusEnum = Subscription.StatusEnum;
 import { NotificationService } from '../../../services/notification.service';
 import { getPictureDisplayName } from '@gravitee/ui-components/src/lib/item';
@@ -54,6 +55,16 @@ export class ApplicationSubscriptionsComponent implements OnInit {
   canDelete: boolean;
   canUpdate: boolean;
   isSearching: boolean;
+  isCustomApiKeyValid = false;
+  isCustomApiKeyInvalid = false;
+  apiKeyForm = this.formBuilder.group({
+    apiKey: new FormControl('', [
+      Validators.minLength(10),
+      Validators.maxLength(64),
+      // Exclude these characters as they are not URI compliant (# % @ / ; = ? | ^ ~ , (space) \)
+      Validators.pattern('[^#%@/;=?|\^~, \\\\]*')
+    ]),
+  });
 
   constructor(
     private route: ActivatedRoute,
@@ -61,6 +72,7 @@ export class ApplicationSubscriptionsComponent implements OnInit {
     private applicationService: ApplicationService,
     private subscriptionService: SubscriptionService,
     private notificationService: NotificationService,
+    private keysService: KeysService,
     private translateService: TranslateService,
     private apiService: ApiService,
     private formBuilder: FormBuilder,
@@ -147,7 +159,6 @@ export class ApplicationSubscriptionsComponent implements OnInit {
         this.form.patchValue({ status: [StatusEnum.ACCEPTED, StatusEnum.PAUSED, StatusEnum.PENDING] });
         this.search(true);
       });
-
     }
   }
 
@@ -203,7 +214,15 @@ export class ApplicationSubscriptionsComponent implements OnInit {
   }
 
   renewSubscription(subscriptionId) {
-    this.subscriptionService.renewKeySubscription({ subscriptionId }).toPromise().then(() => {
+    let request;
+    if (!this.apiKeyForm.controls.apiKey.value && this.apiKeyForm.controls.apiKey.value === '') {
+      request = { subscriptionId };
+    } else {
+      request = { subscriptionId, customApiKey: this.apiKeyForm.controls.apiKey.value };
+    }
+
+    this.subscriptionService.renewKeySubscription(request)
+      .toPromise().then(() => {
       this.notificationService.success(i18n('application.subscriptions.success.renew'));
       this.search(true);
     });
@@ -219,6 +238,7 @@ export class ApplicationSubscriptionsComponent implements OnInit {
   onSelectSubscription(subscription: Subscription) {
     this.router.navigate([], { queryParams: { subscription: subscription ? subscription.id : null }, fragment: 's' });
     if (subscription) {
+      this.apiKeyForm.reset();
       this.selectedSubscription = subscription;
       if (!this.selectedSubscription.keys || !this.selectedSubscription.keys[0]) {
         this.subscriptionService.getSubscriptionById({ subscriptionId: subscription.id, include: ['keys'] })
@@ -267,5 +287,37 @@ export class ApplicationSubscriptionsComponent implements OnInit {
   toggleDisplayExpired() {
     this.displayExpiredApiKeys = !this.displayExpiredApiKeys;
     this.ref.detectChanges();
+  }
+
+  verifyApiKeyAvailability(apiKeyInput) {
+    this.isCustomApiKeyInvalid = false;
+    this.isCustomApiKeyValid = false;
+
+    if (apiKeyInput.target.valid && apiKeyInput.target.value !== '') {
+      this.keysService.verifyApiKeyAvailability({ apiKey: apiKeyInput.target.value }).toPromise().then(response => {
+        this.isCustomApiKeyValid = response;
+        this.isCustomApiKeyInvalid = !response;
+      });
+    }
+  }
+
+  canUseCustomApiKey(): boolean {
+    const metadata = this.metadata[this.selectedSubscription.plan];
+    if (metadata && metadata.securityDefinition) {
+      try {
+        let securityDefinition;
+        securityDefinition = JSON.parse(metadata.securityDefinition);
+
+        if (securityDefinition.useCustomApiKey === undefined) {
+          // Try a double parsing (it appears that sometimes the json of security definition is double-encoded
+          securityDefinition = JSON.parse(securityDefinition);
+        }
+
+        return securityDefinition.useCustomApiKey;
+      } catch (e) {
+        return false;
+      }
+    }
+    return false;
   }
 }

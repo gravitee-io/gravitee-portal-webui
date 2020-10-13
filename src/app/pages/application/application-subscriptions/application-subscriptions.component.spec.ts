@@ -22,10 +22,25 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { KeysService, Subscription } from '@gravitee/ng-portal-webclient';
+import { EMPTY } from 'rxjs';
+import StatusEnum = Subscription.StatusEnum;
 
 describe('ApplicationSubscriptionsComponent', () => {
   let component: ApplicationSubscriptionsComponent;
   let fixture: ComponentFixture<ApplicationSubscriptionsComponent>;
+  const shouldNotVerifyApiKeyTestCases = [
+    { valid: false, input: '' },
+    { valid: true, input: '' },
+    { valid: false, input: 'mock' },
+  ];
+
+  const canUseCustomApiKeyTestCases = [
+    { securityDefinition: '{"useCustomApiKey":true}', expected: true },
+    { securityDefinition: '{"useCustomApiKey":false}', expected: false },
+    { securityDefinition: '{"badKey":true}', expected: false },
+    { securityDefinition: null, expected: false },
+  ];
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -44,8 +59,41 @@ describe('ApplicationSubscriptionsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  shouldNotVerifyApiKeyTestCases.forEach((test) => {
+    it(`should verify API key availability when validity is ${test.valid} and value is ${test.input}`, () => {
+      const spyKeyService = spyOn(KeysService.prototype, 'verifyApiKeyAvailability')
+        .and.returnValue(EMPTY);
+
+      const apiKeyInput = {
+        target: {
+          value: test.input,
+          valid: test.valid
+        }
+      }
+
+      component.verifyApiKeyAvailability(apiKeyInput);
+
+      expect(spyKeyService).not.toHaveBeenCalled();
+    });
   });
+
+  canUseCustomApiKeyTestCases.forEach((test) => {
+    it(`canUseCustomApiKey should return ${test.expected} for security definition ${test.securityDefinition}`, () => {
+      component.selectedSubscription = {
+        id: '',
+        api: '',
+        application: '',
+        status: StatusEnum.ACCEPTED,
+        plan: 'idPlan'
+      };
+      component.metadata = {
+        idPlan: {
+          securityDefinition: test.securityDefinition
+        }
+      };
+
+      expect(component.canUseCustomApiKey()).toEqual(test.expected);
+    });
+  })
 
 });

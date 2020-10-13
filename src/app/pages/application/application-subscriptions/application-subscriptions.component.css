@@ -58,3 +58,7 @@ gv-confirm {
   margin: 0.2rem;
   box-sizing: border-box;
 }
+
+.validation-error {
+  color: var(--gv-theme-color-danger);
+}

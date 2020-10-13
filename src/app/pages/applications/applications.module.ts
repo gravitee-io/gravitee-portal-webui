@@ -60,7 +60,7 @@ import { ApplicationsComponent } from './applications.component';
     GvAnalyticsDashboardComponent,
     GvAnalyticsFiltersComponent,
     ApplicationLogsComponent,
-    GvSelectDashboardComponent,
+    GvSelectDashboardComponent
   ],
   entryComponents: [GvButtonCreateApplicationComponent, GvSelectDashboardComponent],
   imports: [
