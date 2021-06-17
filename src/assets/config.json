@@ -1,5 +1,5 @@
 {
-  "baseURL": "/portal/environments/DEFAULT",
+  "baseURL": "https://api-portal-pic.pp.dktapp.cloud/portal/environments/DEFAULT",
   "loaderURL": "assets/images/gravitee-loader.gif",
   "pagination": {
     "size": {

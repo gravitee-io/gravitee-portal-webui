@@ -107,12 +107,12 @@ export class ApiGeneralComponent implements OnInit {
       if (apiId) {
         if (this.hasRatingFeature) {
           this.translateService.get([
-              i18n('apiGeneral.ratingsSortOptions.newest'),
-              i18n('apiGeneral.ratingsSortOptions.oldest'),
-              i18n('apiGeneral.ratingsSortOptions.best'),
-              i18n('apiGeneral.ratingsSortOptions.worst'),
-              i18n('apiGeneral.ratingsSortOptions.answers'),
-            ]
+            i18n('apiGeneral.ratingsSortOptions.newest'),
+            i18n('apiGeneral.ratingsSortOptions.oldest'),
+            i18n('apiGeneral.ratingsSortOptions.best'),
+            i18n('apiGeneral.ratingsSortOptions.worst'),
+            i18n('apiGeneral.ratingsSortOptions.answers'),
+          ]
           ).toPromise().then(translations => {
             const options = Object.values(translations).map(label => ({ label, value: 'date' }));
             options[1].value = '-date';
@@ -329,6 +329,16 @@ export class ApiGeneralComponent implements OnInit {
 
   hasRatingForm() {
     return this.ratingForm != null;
+  }
+
+
+  getDocNameByFullURL(url) {
+    const array = url.split('/');
+    if (url === '/') {
+      return url;
+    } else if (array[array.length - 1] === "") {
+      return array[array.length - 2]
+    } else { return array[array.length - 1] }
   }
 
   hasValidRatingForm() {
