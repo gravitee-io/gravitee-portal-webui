@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "@angular-builders/jest": "^10.0.1",
-    "@angular-devkit/build-angular": "^0.901.12",
+    "@angular-devkit/build-angular": "^12.2.2",
     "@angular-devkit/build-ng-packagr": "^0.1001.4",
     "@angular/cli": "^9.1.0",
     "@angular/compiler-cli": "^9.1.1",
