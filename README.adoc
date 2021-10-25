@@ -1,4 +1,10 @@
-= Gravitee.io Portal
+= ⚠️ DEPRECATED
+
+This repository is no longer active, all the sources have been moved to https://github.com/gravitee-io/gravitee-api-management[APIM monorepo].
+
+The new repository will be become the single GitHub repository for everything related to Gravitee.io API Management.
+
+== Gravitee.io Portal
 
 This project was generated with https://github.com/angular/angular-cli[Angular CLI] version 9.1.1.
 
